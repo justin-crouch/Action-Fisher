@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://2vgou50xdtjk"]
+[gd_scene load_steps=4 format=3 uid="uid://2vgou50xdtjk"]
 
 [ext_resource type="PackedScene" uid="uid://iymn8t07gpl6" path="res://scenes/player.tscn" id="1_ach4x"]
 [ext_resource type="PackedScene" uid="uid://b7ll12xiwgikm" path="res://scenes/rod.tscn" id="2_jg3on"]
+[ext_resource type="PackedScene" uid="uid://dcsevfmhhkf1g" path="res://scenes/tentacle.tscn" id="3_tapio"]
 
 [node name="Main" type="Node2D"]
 
@@ -20,4 +21,16 @@ position = Vector2(896, 313)
 MAX_TIME = 3.786
 
 [node name="Player" parent="." instance=ExtResource("1_ach4x")]
-position = Vector2(737, 309)
+position = Vector2(743, 317)
+
+[node name="Tentacles" type="Node2D" parent="."]
+
+[node name="Tentacle" parent="Tentacles" instance=ExtResource("3_tapio")]
+position = Vector2(538, 505)
+TARGET_POS = NodePath("../Target1")
+MIN_TIME = 10.0
+MAX_TIME = 20.0
+HIT_COOLDOWN = 0.2
+
+[node name="Target1" type="Node2D" parent="Tentacles"]
+position = Vector2(530, 289)

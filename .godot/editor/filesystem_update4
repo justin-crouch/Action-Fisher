@@ -4,3 +4,5 @@ res://scenes/player.gd
 res://scenes/scripts/player.gd
 res://scenes/rod.tscn
 res://scenes/scripts/rod.gd
+res://scenes/tentacle.tscn
+res://scenes/scripts/tentacle.gd
