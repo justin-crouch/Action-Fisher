@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://ceykvifpxa8dd"]
+
+[ext_resource type="Script" path="res://scenes/scripts/game_over.gd" id="1_kw5v4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8nn55"]
+font_size = 32
+font_color = Color(100, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_blygc"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_sv0qc"]
+font_size = 24
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_kw5v4")
+
+[node name="GameOver" type="Label" parent="."]
+offset_left = 445.0
+offset_top = 127.0
+offset_right = 699.0
+offset_bottom = 205.0
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_8nn55")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeText" type="Label" parent="."]
+offset_left = 509.0
+offset_top = 208.0
+offset_right = 594.0
+offset_bottom = 254.0
+text = "TIME:"
+label_settings = SubResource("LabelSettings_blygc")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Time" type="Label" parent="TimeText"]
+offset_left = 93.0
+offset_right = 157.0
+offset_bottom = 46.0
+text = "23"
+label_settings = SubResource("LabelSettings_sv0qc")
+vertical_alignment = 1
+
+[node name="Replay" type="Button" parent="."]
+offset_left = 484.0
+offset_top = 284.0
+offset_right = 656.0
+offset_bottom = 335.0
+text = "Replay"
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 484.0
+offset_top = 351.0
+offset_right = 656.0
+offset_bottom = 402.0
+text = "Exit"
+
+[connection signal="pressed" from="Replay" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

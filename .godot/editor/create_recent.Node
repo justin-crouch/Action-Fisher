@@ -1,5 +1,6 @@
-Node2D
 Label
+Button
+Node2D
 Timer
 Panel
 CollisionShape2D

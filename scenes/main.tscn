@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://2vgou50xdtjk"]
+[gd_scene load_steps=6 format=3 uid="uid://2vgou50xdtjk"]
 
 [ext_resource type="PackedScene" uid="uid://iymn8t07gpl6" path="res://scenes/player.tscn" id="1_ach4x"]
 [ext_resource type="PackedScene" uid="uid://b7ll12xiwgikm" path="res://scenes/rod.tscn" id="2_jg3on"]
 [ext_resource type="PackedScene" uid="uid://dcsevfmhhkf1g" path="res://scenes/tentacle.tscn" id="3_tapio"]
+[ext_resource type="PackedScene" uid="uid://ci7kwoh1tw8va" path="res://scenes/ui.tscn" id="4_gjqem"]
+[ext_resource type="PackedScene" uid="uid://cfy63be300nlf" path="res://scenes/boat.tscn" id="5_uqgrn"]
 
 [node name="Main" type="Node2D"]
 
@@ -14,23 +16,77 @@ offset_top = 325.0
 offset_right = 900.0
 offset_bottom = 365.0
 
+[node name="Targets" type="Node2D" parent="."]
+
+[node name="Target1" type="Node2D" parent="Targets"]
+position = Vector2(580, 296)
+
+[node name="Target2" type="Node2D" parent="Targets"]
+position = Vector2(695, 287)
+
+[node name="Target3" type="Node2D" parent="Targets"]
+position = Vector2(482, 288)
+
 [node name="Rods" type="Node2D" parent="."]
 
-[node name="Rod" parent="Rods" instance=ExtResource("2_jg3on")]
-position = Vector2(896, 313)
-MAX_TIME = 3.786
+[node name="Rod1" parent="Rods" instance=ExtResource("2_jg3on")]
+position = Vector2(888, 315)
+BOAT_PATH = NodePath("../../Boat")
+MIN_TIME = 2.381
+MAX_TIME = 30.0
+
+[node name="Rod2" parent="Rods" instance=ExtResource("2_jg3on")]
+position = Vector2(291, 314)
+BOAT_PATH = NodePath("../../Boat")
+MAX_TIME = 30.0
+
+[node name="Rod3" parent="Rods" instance=ExtResource("2_jg3on")]
+position = Vector2(375, 313)
+BOAT_PATH = NodePath("../../Boat")
+MAX_TIME = 21.638
+
+[node name="Rod4" parent="Rods" instance=ExtResource("2_jg3on")]
+position = Vector2(799, 315)
+BOAT_PATH = NodePath("../../Boat")
+MAX_TIME = 17.771
 
 [node name="Player" parent="." instance=ExtResource("1_ach4x")]
-position = Vector2(743, 317)
+position = Vector2(523, 318)
+
+[node name="UI" parent="Player" instance=ExtResource("4_gjqem")]
+offset_left = -309.0
+offset_top = -195.0
+offset_right = -309.0
+offset_bottom = -195.0
+BOAT_PATH = NodePath("../../Boat")
 
 [node name="Tentacles" type="Node2D" parent="."]
 
-[node name="Tentacle" parent="Tentacles" instance=ExtResource("3_tapio")]
-position = Vector2(538, 505)
-TARGET_POS = NodePath("../Target1")
+[node name="Tentacle1" parent="Tentacles" instance=ExtResource("3_tapio")]
+position = Vector2(562, 534)
+TARGET_POS = NodePath("../../Targets/Target1")
+BOAT_PATH = NodePath("../../Boat")
 MIN_TIME = 10.0
 MAX_TIME = 20.0
 HIT_COOLDOWN = 0.2
 
-[node name="Target1" type="Node2D" parent="Tentacles"]
-position = Vector2(530, 289)
+[node name="Tentacle2" parent="Tentacles" instance=ExtResource("3_tapio")]
+position = Vector2(626, 533)
+TARGET_POS = NodePath("../../Targets/Target2")
+BOAT_PATH = NodePath("../../Boat")
+MIN_TIME = 10.0
+MAX_TIME = 20.0
+HIT_COOLDOWN = 0.2
+
+[node name="Tentacle3" parent="Tentacles" instance=ExtResource("3_tapio")]
+position = Vector2(497, 528)
+TARGET_POS = NodePath("../../Targets/Target3")
+BOAT_PATH = NodePath("../../Boat")
+MIN_TIME = 10.0
+MAX_TIME = 20.0
+HIT_COOLDOWN = 0.2
+
+[node name="Boat" parent="." instance=ExtResource("5_uqgrn")]
+position = Vector2(72, 238)
+TENTACLES = NodePath("../Tentacles")
+RODS = NodePath("../Rods")

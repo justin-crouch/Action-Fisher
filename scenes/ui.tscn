@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://ci7kwoh1tw8va"]
+
+[ext_resource type="Script" path="res://scenes/scripts/ui.gd" id="1_3gm7u"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3gm7u")
+
+[node name="BoatHealth" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 58.0
+offset_bottom = 27.0
+text = "Health:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Health" type="Label" parent="BoatHealth"]
+layout_mode = 0
+offset_left = 58.0
+offset_right = 91.0
+offset_bottom = 27.0
+text = "12"
+vertical_alignment = 1
+
+[node name="Time" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 25.0
+offset_right = 58.0
+offset_bottom = 52.0
+text = "Time:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Time" type="Label" parent="Time"]
+layout_mode = 0
+offset_left = 58.0
+offset_right = 91.0
+offset_bottom = 27.0
+text = "12"
+vertical_alignment = 1

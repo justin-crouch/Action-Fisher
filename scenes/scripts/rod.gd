@@ -6,29 +6,34 @@ extends Area2D
 @onready var TIMER = $Timer
 @onready var COOLDOWN = $Cooldown
 
-@export_range(1.0, 10.0) var MIN_TIME = 1.0
-@export_range(1.0, 10.0) var MAX_TIME = 1.0
+@export_node_path("Node2D") var BOAT_PATH
+var Boat
+
+@export_range(1.0, 30.0) var MIN_TIME = 1.0
+@export_range(1.0, 30.0) var MAX_TIME = 1.0
 
 enum STATES {
 	WAIT,
 	WAITING,
 	TICKING,
 	TICK,
+	DISABLE,
 	DISABLED
 }
 @export var state: STATES
 var nearby = false
 
 func _ready():
-	state = STATES.WAIT
+	Boat = get_node(BOAT_PATH)
+	state = STATES.WAITING
+	COOLDOWN.start(randf_range(MIN_TIME+2, MAX_TIME))
 
 
 func _process(delta):
 	match(state):
 		STATES.WAIT:
 			TIMER.stop()
-			COOLDOWN.wait_time = randf_range(MIN_TIME, MAX_TIME)
-			COOLDOWN.start()
+			COOLDOWN.start(randf_range(MIN_TIME, MAX_TIME))
 			
 			INTERACT.visible = false
 			DISPLAY_TIMER.visible = false
@@ -51,18 +56,24 @@ func _process(delta):
 			else: 		INTERACT.visible = false
 			
 			if(nearby && Input.is_action_pressed("INTERACT")): state = STATES.WAIT
-			
-		STATES.DISABLED:
+		
+		STATES.DISABLE:
 			INTERACT.visible = false
 			DISPLAY_TIMER.visible = false
 			PANEL.modulate = Color(255, 0, 0)
+			Boat.remove_rod()
+			
+			state = STATES.DISABLED
+				
+		STATES.DISABLED:
+			pass
 			
 
 func _on_cooldown_timeout():
 	state = STATES.TICK
 
 func _on_timer_timeout():
-	state = STATES.DISABLED
+	state = STATES.DISABLE
 
 
 func _on_body_entered(body):
