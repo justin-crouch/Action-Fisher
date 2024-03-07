@@ -1,3 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1709820375
+::res://::1709821037
 icon.svg::CompressedTexture2D::2175510356258653566::1709820369::1709820375::1::::<><>::
+::res://scenes/::1709821340
+main.tscn::PackedScene::1938841112111293872::1709821118::0::1::::<><>::
+player.gd::GDScript::-1::1709821296::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::611809398236395489::1709821343::0::1::::<><>::res://scenes/player.gd
+::res://scenes/scripts/::1709821340

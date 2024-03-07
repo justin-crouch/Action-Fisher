@@ -1,3 +1,23 @@
-[gd_scene format=3 uid="uid://2vgou50xdtjk"]
+[gd_scene load_steps=3 format=3 uid="uid://2vgou50xdtjk"]
 
-[node name="main" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://iymn8t07gpl6" path="res://scenes/player.tscn" id="1_ach4x"]
+[ext_resource type="PackedScene" uid="uid://b7ll12xiwgikm" path="res://scenes/rod.tscn" id="2_jg3on"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0, 0.807843, 0, 1)
+self_modulate = Color(0, 100, 0, 1)
+offset_left = 256.0
+offset_top = 325.0
+offset_right = 900.0
+offset_bottom = 365.0
+
+[node name="Rods" type="Node2D" parent="."]
+
+[node name="Rod" parent="Rods" instance=ExtResource("2_jg3on")]
+position = Vector2(896, 313)
+MAX_TIME = 3.786
+
+[node name="Player" parent="." instance=ExtResource("1_ach4x")]
+position = Vector2(737, 309)

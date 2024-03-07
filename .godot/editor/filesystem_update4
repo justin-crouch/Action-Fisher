@@ -1,0 +1,6 @@
+res://scenes/main.tscn
+res://scenes/player.tscn
+res://scenes/player.gd
+res://scenes/scripts/player.gd
+res://scenes/rod.tscn
+res://scenes/scripts/rod.gd
