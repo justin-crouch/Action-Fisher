@@ -55,7 +55,7 @@ func _process(delta):
 			if(nearby): INTERACT.visible = true
 			else: 		INTERACT.visible = false
 			
-			if(nearby && Input.is_action_pressed("INTERACT")): state = STATES.WAIT
+			if(nearby && Input.is_action_just_pressed("INTERACT")): state = STATES.WAIT
 		
 		STATES.DISABLE:
 			INTERACT.visible = false

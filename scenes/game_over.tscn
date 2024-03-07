@@ -19,20 +19,21 @@ font_size = 24
 script = ExtResource("1_kw5v4")
 
 [node name="GameOver" type="Label" parent="."]
-offset_left = 445.0
-offset_top = 127.0
-offset_right = 699.0
-offset_bottom = 205.0
+offset_left = 158.0
+offset_top = 10.0
+offset_right = 391.0
+offset_bottom = 103.0
+scale = Vector2(0.674358, 0.605401)
 text = "GAME OVER"
 label_settings = SubResource("LabelSettings_8nn55")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TimeText" type="Label" parent="."]
-offset_left = 509.0
-offset_top = 208.0
-offset_right = 594.0
-offset_bottom = 254.0
+offset_left = 162.0
+offset_top = 57.0
+offset_right = 247.0
+offset_bottom = 103.0
 text = "TIME:"
 label_settings = SubResource("LabelSettings_blygc")
 horizontal_alignment = 2
@@ -47,17 +48,17 @@ label_settings = SubResource("LabelSettings_sv0qc")
 vertical_alignment = 1
 
 [node name="Replay" type="Button" parent="."]
-offset_left = 484.0
-offset_top = 284.0
-offset_right = 656.0
-offset_bottom = 335.0
+offset_left = 151.0
+offset_top = 109.0
+offset_right = 323.0
+offset_bottom = 160.0
 text = "Replay"
 
 [node name="Exit" type="Button" parent="."]
-offset_left = 484.0
-offset_top = 351.0
-offset_right = 656.0
-offset_bottom = 402.0
+offset_left = 151.0
+offset_top = 176.0
+offset_right = 323.0
+offset_bottom = 227.0
 text = "Exit"
 
 [connection signal="pressed" from="Replay" to="." method="_on_replay_pressed"]

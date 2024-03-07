@@ -5,6 +5,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ryws6"]
 
 [node name="Tentacle" type="Area2D"]
+z_index = 2
+scale = Vector2(0.7, 1)
 script = ExtResource("1_4y8wy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

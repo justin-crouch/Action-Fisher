@@ -21,7 +21,6 @@ func _ready():
 	ten_array = get_node(TENTACLES).get_children()
 	
 	TEN_STATES = ten_array[0].STATES
-	print(TEN_STATES)
 
 func _process(delta):
 	spawn -= delta

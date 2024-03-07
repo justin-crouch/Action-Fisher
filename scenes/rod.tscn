@@ -6,6 +6,7 @@
 size = Vector2(24, 40)
 
 [node name="Rod" type="Area2D"]
+scale = Vector2(0.6, 1)
 script = ExtResource("1_otodr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -20,11 +21,13 @@ offset_right = 12.0
 
 [node name="Interact" type="Label" parent="."]
 visible = false
-offset_left = -25.0
+offset_left = -35.0
 offset_top = -63.0
-offset_right = 25.0
+offset_right = 35.0
 offset_bottom = -40.0
 text = "SPACE"
+horizontal_alignment = 1
+vertical_alignment = 1
 uppercase = true
 
 [node name="DisplayTimer" type="Label" parent="."]
