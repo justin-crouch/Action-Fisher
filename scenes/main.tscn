@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://iymn8t07gpl6" path="res://scenes/player.tscn" id="1_ach4x"]
 [ext_resource type="PackedScene" uid="uid://b7ll12xiwgikm" path="res://scenes/rod.tscn" id="2_jg3on"]
 [ext_resource type="PackedScene" uid="uid://dcsevfmhhkf1g" path="res://scenes/tentacle.tscn" id="3_tapio"]
-[ext_resource type="Script" path="res://scenes/scripts/ui.gd" id="3_v8xc3"]
+[ext_resource type="PackedScene" uid="uid://ci7kwoh1tw8va" path="res://scenes/ui.tscn" id="5_0g0vr"]
 [ext_resource type="PackedScene" uid="uid://cfy63be300nlf" path="res://scenes/boat.tscn" id="5_uqgrn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_koidv"]
@@ -22,7 +22,15 @@ position = Vector2(314, 163)
 [node name="Target3" type="Node2D" parent="Targets"]
 position = Vector2(157, 158)
 
+[node name="Player" parent="." instance=ExtResource("1_ach4x")]
+position = Vector2(283, 179)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+offset = Vector2(0, -30)
+zoom = Vector2(1.4, 1.4)
+
 [node name="Rods" type="Node2D" parent="."]
+z_index = 4
 
 [node name="Rod1" parent="Rods" instance=ExtResource("2_jg3on")]
 position = Vector2(370, 180)
@@ -32,121 +40,19 @@ MAX_COOLDOWN_TIME = 20.0
 [node name="Rod2" parent="Rods" instance=ExtResource("2_jg3on")]
 position = Vector2(55, 171)
 BOAT_PATH = NodePath("../../Boat")
+FLIP = 0
 MAX_COOLDOWN_TIME = 20.0
 
 [node name="Rod3" parent="Rods" instance=ExtResource("2_jg3on")]
 position = Vector2(91, 170)
 BOAT_PATH = NodePath("../../Boat")
+FLIP = 0
 MAX_COOLDOWN_TIME = 20.0
 
 [node name="Rod4" parent="Rods" instance=ExtResource("2_jg3on")]
 position = Vector2(407, 178)
 BOAT_PATH = NodePath("../../Boat")
 MAX_COOLDOWN_TIME = 20.0
-
-[node name="Player" parent="." instance=ExtResource("1_ach4x")]
-position = Vector2(283, 179)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-offset = Vector2(0, -30)
-zoom = Vector2(1.4, 1.4)
-
-[node name="UI" type="Control" parent="Player/Camera2D"]
-z_index = 20
-layout_mode = 3
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -166.0
-offset_top = -124.0
-offset_right = -166.0
-offset_bottom = -124.0
-grow_horizontal = 2
-size_flags_horizontal = 0
-script = ExtResource("3_v8xc3")
-BOAT_PATH = NodePath("../../../Boat")
-
-[node name="HealthTime" type="Control" parent="Player/Camera2D/UI"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="BoatHealth" type="Label" parent="Player/Camera2D/UI/HealthTime"]
-layout_mode = 0
-offset_left = 1.0
-offset_right = 58.0
-offset_bottom = 27.0
-text = "Health:"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="Health" type="Label" parent="Player/Camera2D/UI/HealthTime/BoatHealth"]
-layout_mode = 0
-offset_left = 58.0
-offset_right = 91.0
-offset_bottom = 27.0
-text = "12"
-vertical_alignment = 1
-
-[node name="Time" type="Label" parent="Player/Camera2D/UI/HealthTime"]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 25.0
-offset_right = 58.0
-offset_bottom = 52.0
-text = "Time:"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="Time" type="Label" parent="Player/Camera2D/UI/HealthTime/Time"]
-layout_mode = 0
-offset_left = 58.0
-offset_right = 91.0
-offset_bottom = 27.0
-text = "12"
-vertical_alignment = 1
-
-[node name="Pause" type="Control" parent="Player/Camera2D/UI"]
-visible = false
-anchors_preset = 0
-offset_left = -82.0
-offset_top = -25.0
-offset_right = -82.0
-offset_bottom = -25.0
-
-[node name="Resume" type="Button" parent="Player/Camera2D/UI/Pause"]
-layout_mode = 0
-offset_left = 216.0
-offset_top = 81.0
-offset_right = 286.0
-offset_bottom = 112.0
-text = "Resume"
-
-[node name="Menu" type="Button" parent="Player/Camera2D/UI/Pause"]
-layout_mode = 0
-offset_left = 217.0
-offset_top = 120.0
-offset_right = 287.0
-offset_bottom = 151.0
-text = "Menu"
-
-[node name="Quit" type="Button" parent="Player/Camera2D/UI/Pause"]
-layout_mode = 0
-offset_left = 218.0
-offset_top = 159.0
-offset_right = 288.0
-offset_bottom = 190.0
-text = "Quit"
-
-[node name="Label" type="Label" parent="Player/Camera2D/UI/Pause"]
-layout_mode = 0
-offset_left = 205.0
-offset_top = 32.0
-offset_right = 294.0
-offset_bottom = 66.0
-text = "PAUSED"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Tentacles" type="Node2D" parent="."]
 
@@ -190,6 +96,7 @@ shape = SubResource("RectangleShape2D_koidv")
 position = Vector2(420, 103)
 shape = SubResource("RectangleShape2D_koidv")
 
-[connection signal="pressed" from="Player/Camera2D/UI/Pause/Resume" to="Player/Camera2D/UI" method="_on_resume_pressed"]
-[connection signal="pressed" from="Player/Camera2D/UI/Pause/Menu" to="Player/Camera2D/UI" method="_on_menu_pressed"]
-[connection signal="pressed" from="Player/Camera2D/UI/Pause/Quit" to="Player/Camera2D/UI" method="_on_quit_pressed"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("5_0g0vr")]
+BOAT_PATH = NodePath("../../Boat")

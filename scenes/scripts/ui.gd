@@ -25,6 +25,7 @@ func _on_paused(paused):
 	else: PAUSE.visible = false
 
 
+
 func _on_resume_pressed():
 	Score.resume()
 func _on_menu_pressed():

@@ -1,11 +1,4 @@
-res://scenes/main.tscn
-res://scenes/scripts/rod.gd
-res://scenes/player.tscn
-res://scenes/scripts/score.gd
-res://scenes/scripts/player.gd
-res://scenes/scripts/boat.gd
 res://scenes/rod.tscn
-res://scenes/scripts/tentacle.gd
-res://scenes/tentacle.tscn
-res://scenes/scripts/ui.gd
-res://scenes/ui.tscn
+res://scenes/scripts/rod.gd
+res://scenes/main.tscn
+res://scenes/menu.tscn

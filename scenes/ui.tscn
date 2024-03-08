@@ -3,16 +3,12 @@
 [ext_resource type="Script" path="res://scenes/scripts/ui.gd" id="1_3gm7u"]
 
 [node name="UI" type="Control"]
-z_index = 10
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 script = ExtResource("1_3gm7u")
 
 [node name="HealthTime" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -53,6 +49,8 @@ text = "12"
 vertical_alignment = 1
 
 [node name="Pause" type="Control" parent="."]
+visible = false
+layout_mode = 3
 anchors_preset = 0
 
 [node name="Resume" type="Button" parent="Pause"]
@@ -88,3 +86,7 @@ offset_bottom = 66.0
 text = "PAUSED"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="Pause/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Pause/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Pause/Quit" to="." method="_on_quit_pressed"]

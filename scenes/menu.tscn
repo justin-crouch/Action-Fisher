@@ -1,23 +1,56 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbvr4gtvlla6o"]
+[gd_scene load_steps=4 format=3 uid="uid://dbvr4gtvlla6o"]
 
 [ext_resource type="Script" path="res://scenes/scripts/menu.gd" id="1_ykjgp"]
+[ext_resource type="Texture2D" uid="uid://dg38ti8b43ckd" path="res://assets/boat_back.png" id="2_gauiu"]
+[ext_resource type="Texture2D" uid="uid://dewp6uuyurbyr" path="res://assets/boat_front.png" id="3_s667b"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_ykjgp")
 
-[node name="Play" type="Button" parent="."]
-offset_left = 154.0
-offset_top = 48.0
-offset_right = 339.0
-offset_bottom = 119.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Play" type="Button" parent="CanvasLayer"]
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 194.0
+offset_bottom = 80.0
 text = "PLAY"
 
-[node name="Exit" type="Button" parent="."]
-offset_left = 157.0
-offset_top = 143.0
-offset_right = 342.0
-offset_bottom = 214.0
+[node name="Setting" type="Button" parent="CanvasLayer"]
+offset_left = 9.0
+offset_top = 81.0
+offset_right = 194.0
+offset_bottom = 152.0
+text = "SETTINGS"
+
+[node name="Exit" type="Button" parent="CanvasLayer"]
+offset_left = 9.0
+offset_top = 153.0
+offset_right = 194.0
+offset_bottom = 224.0
 text = "EXIT"
 
-[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[node name="Title" type="Label" parent="CanvasLayer"]
+offset_left = 284.0
+offset_top = 18.0
+offset_right = 385.0
+offset_bottom = 41.0
+text = "Action Fisher"
+
+[node name="Boat" type="Node2D" parent="."]
+position = Vector2(275, 124)
+metadata/_edit_group_ = true
+
+[node name="BoatBack" type="Sprite2D" parent="Boat"]
+texture = ExtResource("2_gauiu")
+
+[node name="BoatFront" type="Sprite2D" parent="Boat"]
+texture = ExtResource("3_s667b")
+
+[node name="Camera2D" type="Camera2D" parent="Boat"]
+offset = Vector2(-150, 0)
+zoom = Vector2(0.6, 0.6)
+
+[connection signal="pressed" from="CanvasLayer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Setting" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]
