@@ -1,10 +1,11 @@
+Label
+Button
+Control
 Camera2D
 CollisionShape2D
 StaticBody2D
 Area2D
 AnimatedSprite2D
-Label
-Button
 Node2D
 Timer
 Panel

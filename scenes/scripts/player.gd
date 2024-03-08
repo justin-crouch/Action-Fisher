@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var ANIMATOR = $AnimatedSprite2D
+
 const SPEED = 140.0
 
 enum STATES {
@@ -12,9 +13,16 @@ enum STATES {
 	
 	INTERACT,
 	INTERACTING,
+	
+	PAUSED,
+	RESUME,
 }
 var state: STATES = STATES.IDLE
+var last_state: STATES = state
 var nearby = false
+
+func _ready():
+	Score.on_pause.connect(_on_pause)
 
 func _physics_process(delta):
 	match(state):
@@ -54,6 +62,19 @@ func _physics_process(delta):
 			
 		STATES.ATTACKING:
 			if(!ANIMATOR.is_playing()): state = STATES.WALK
-		
+			
+		STATES.PAUSED:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+			ANIMATOR.pause()
+			
+		STATES.RESUME:
+			ANIMATOR.play()
+			state = last_state
 
 	move_and_slide()
+
+func _on_pause(paused):
+	if(paused):
+		last_state = state
+		state = STATES.PAUSED
+	else: state = STATES.RESUME
