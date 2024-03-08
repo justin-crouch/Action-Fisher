@@ -1,25 +1,27 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1709854160
+::res://::1709854666
 icon.svg::CompressedTexture2D::2175510356258653566::1709820369::1709820375::1::::<><>::
-::res://assets/::1709854160
+::res://assets/::1709855152
 boat_back.png::CompressedTexture2D::7640235752117296751::1709849912::1709849915::1::::<><>::
 boat_front.png::CompressedTexture2D::7486400933204234765::1709849922::1709849922::1::::<><>::
+_pick up.png::CompressedTexture2D::8917901696557318097::1709855152::1709855152::1::::<><>::
+_side attack.png::CompressedTexture2D::4186493492780248221::1709855152::1709855152::1::::<><>::
 _side idle.png::CompressedTexture2D::386990803743797480::1709849955::1709849955::1::::<><>::
 _side walk.png::CompressedTexture2D::6414584555147104155::1709854155::1709854160::1::::<><>::
-::res://scenes/::1709854002
-boat.tscn::PackedScene::5175262940688062215::1709853938::0::1::::<><>::res://scenes/scripts/boat.gd<>uid://dg38ti8b43ckd::::res://assets/boat_back.png<>uid://dewp6uuyurbyr::::res://assets/boat_front.png
+::res://scenes/::1709854908
+boat.tscn::PackedScene::5175262940688062215::1709854422::0::1::::<><>::res://scenes/scripts/boat.gd<>uid://dg38ti8b43ckd::::res://assets/boat_back.png<>uid://dewp6uuyurbyr::::res://assets/boat_front.png
 game_over.tscn::PackedScene::5103786908258562301::1709850836::0::1::::<><>::res://scenes/scripts/game_over.gd
-main.tscn::PackedScene::1938841112111293872::1709854002::0::1::::<><>::uid://iymn8t07gpl6::::res://scenes/player.tscn<>uid://b7ll12xiwgikm::::res://scenes/rod.tscn<>uid://dcsevfmhhkf1g::::res://scenes/tentacle.tscn<>uid://ci7kwoh1tw8va::::res://scenes/ui.tscn<>uid://cfy63be300nlf::::res://scenes/boat.tscn
+main.tscn::PackedScene::1938841112111293872::1709854486::0::1::::<><>::uid://iymn8t07gpl6::::res://scenes/player.tscn<>uid://b7ll12xiwgikm::::res://scenes/rod.tscn<>uid://dcsevfmhhkf1g::::res://scenes/tentacle.tscn<>uid://ci7kwoh1tw8va::::res://scenes/ui.tscn<>uid://cfy63be300nlf::::res://scenes/boat.tscn
 menu.tscn::PackedScene::7273887149913524500::1709850844::0::1::::<><>::res://scenes/scripts/menu.gd
-player.tscn::PackedScene::611809398236395489::1709853938::0::1::::<><>::res://scenes/scripts/player.gd<>uid://frpxgnh67q2c::::res://assets/_side idle.png<>uid://drjbqvost4vln::::res://assets/_side walk.png
+player.tscn::PackedScene::611809398236395489::1709854908::0::1::::<><>::res://scenes/scripts/player.gd<>uid://frpxgnh67q2c::::res://assets/_side idle.png<>uid://cxnjjgvnxyedv::::res://assets/_side walk.png
 rod.tscn::PackedScene::4655887607020836944::1709853938::0::1::::<><>::res://scenes/scripts/rod.gd
 tentacle.tscn::PackedScene::7337079189053718318::1709853938::0::1::::<><>::res://scenes/scripts/tentacle.gd
 ui.tscn::PackedScene::5401059409362094254::1709844009::0::1::::<><>::res://scenes/scripts/ui.gd
-::res://scenes/scripts/::1709853846
+::res://scenes/scripts/::1709854908
 boat.gd::GDScript::-1::1709851537::0::1::::<>Node<>::
 game_over.gd::GDScript::-1::1709845060::0::1::::<>Node2D<>::
 menu.gd::GDScript::-1::1709843956::0::1::::<>Node2D<>::
-player.gd::GDScript::-1::1709853846::0::1::::<>CharacterBody2D<>::
+player.gd::GDScript::-1::1709854908::0::1::::<>CharacterBody2D<>::
 rod.gd::GDScript::-1::1709853000::0::1::::<>Area2D<>::
 score.gd::GDScript::-1::1709845116::0::1::::<>Node<>::
 tentacle.gd::GDScript::-1::1709842098::0::1::::<>Area2D<>::

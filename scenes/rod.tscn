@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kcb5u"]
 size = Vector2(24, 40)
 
-[node name="Rod" type="Area2D"]
+[node name="Rod" type="Area2D" groups=["Interactable"]]
 scale = Vector2(0.6, 1)
 script = ExtResource("1_otodr")
 

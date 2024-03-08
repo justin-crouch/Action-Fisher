@@ -22,6 +22,7 @@ enum STATES {
 }
 @export var state: STATES
 var nearby = false
+var plr
 
 func _ready():
 	Boat = get_node(BOAT_PATH)
@@ -52,7 +53,9 @@ func _process(delta):
 		STATES.TICKING:
 			DISPLAY_TIMER.text = str( snapped(TIMER.time_left, .1) )
 			
-			if(nearby): INTERACT.visible = true
+			if(nearby):
+				INTERACT.visible = true
+				if(plr): plr.nearby = true
 			else: 		INTERACT.visible = false
 			
 			if(nearby && Input.is_action_just_pressed("INTERACT")): state = STATES.WAIT
@@ -79,7 +82,10 @@ func _on_timer_timeout():
 func _on_body_entered(body):
 	if(body.name != 'Player'): return
 	nearby = true
+	plr = body
 
 func _on_body_exited(body):
 	if(body.name != 'Player'): return
 	nearby = false
+	body.nearby = false
+	plr = null
