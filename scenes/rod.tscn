@@ -260,10 +260,10 @@ shape = SubResource("RectangleShape2D_kcb5u")
 
 [node name="Interact" type="Label" parent="."]
 visible = false
-offset_left = -34.0
-offset_top = -262.0
-offset_right = 36.0
-offset_bottom = -239.0
+offset_left = -11.0
+offset_top = -195.0
+offset_right = 59.0
+offset_bottom = -172.0
 text = "SPACE"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -291,7 +291,7 @@ region_rect = Rect2(0, 104, 16, 32)
 
 [node name="P2" type="Sprite2D" parent="SkeleSprites/RodSprites/Base/P1"]
 z_index = 12
-position = Vector2(0, -32)
+position = Vector2(-9.53674e-07, -32)
 rotation = 0.402082
 scale = Vector2(0.999866, 0.999866)
 texture = ExtResource("2_yrqki")
@@ -311,7 +311,7 @@ region_rect = Rect2(0, 32, 16, 40)
 
 [node name="P4" type="Sprite2D" parent="SkeleSprites/RodSprites/Base/P1/P2/P3"]
 z_index = 12
-position = Vector2(7.62939e-06, -40)
+position = Vector2(0, -40)
 rotation = 0.67405
 scale = Vector2(0.999903, 0.999903)
 texture = ExtResource("2_yrqki")
@@ -382,10 +382,10 @@ libraries = {
 [node name="ProgressBar" type="ProgressBar" parent="."]
 visible = false
 modulate = Color(100, 0, 0, 1)
-offset_left = -45.0
-offset_top = -233.0
-offset_right = -14.0
-offset_bottom = -174.0
+offset_left = -46.0
+offset_top = -208.0
+offset_right = -15.0
+offset_bottom = -149.0
 max_value = 7.0
 fill_mode = 3
 show_percentage = false

@@ -50,6 +50,8 @@ func _ready():
 	start_pos = global_position
 	state = STATES.INACTIVE
 	
+	Score.on_pause.connect(func(paused): if(paused): animation_player.pause() else: animation_player.play())
+	
 	cooldown_timer = randf_range(MIN_COOLDOWN_TIME, MAX_COOLDOWN_TIME)
 	Boat.tick.connect(_on_tick)
 
