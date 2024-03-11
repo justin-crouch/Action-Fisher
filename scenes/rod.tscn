@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dqb0jlkikxmyh" path="res://assets/FullAssets/rod.svg" id="2_yrqki"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kcb5u"]
-size = Vector2(24.5, 143.75)
+size = Vector2(45, 285.75)
 
 [sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_wgq3y"]
 target_nodepath = NodePath("../TargetMid")
@@ -254,26 +254,20 @@ _data = {
 script = ExtResource("1_otodr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.75, -63.125)
+visible = false
+position = Vector2(1.5, -134.125)
 shape = SubResource("RectangleShape2D_kcb5u")
 
 [node name="Interact" type="Label" parent="."]
+visible = false
 offset_left = -34.0
-offset_top = -168.0
+offset_top = -262.0
 offset_right = 36.0
-offset_bottom = -145.0
+offset_bottom = -239.0
 text = "SPACE"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
-
-[node name="DisplayTimer" type="Label" parent="."]
-offset_left = -29.0
-offset_top = -39.0
-offset_right = 29.0
-offset_bottom = -16.0
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="SkeleSprites" type="Node2D" parent="."]
 
@@ -317,7 +311,7 @@ region_rect = Rect2(0, 32, 16, 40)
 
 [node name="P4" type="Sprite2D" parent="SkeleSprites/RodSprites/Base/P1/P2/P3"]
 z_index = 12
-position = Vector2(1.52588e-05, -40)
+position = Vector2(7.62939e-06, -40)
 rotation = 0.67405
 scale = Vector2(0.999903, 0.999903)
 texture = ExtResource("2_yrqki")
@@ -386,10 +380,12 @@ libraries = {
 }
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+modulate = Color(100, 0, 0, 1)
 offset_left = -45.0
-offset_top = -139.0
+offset_top = -233.0
 offset_right = -14.0
-offset_bottom = -80.0
+offset_bottom = -174.0
 max_value = 7.0
 fill_mode = 3
 show_percentage = false

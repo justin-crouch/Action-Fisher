@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
-@onready var ANIMATOR = $AnimatedSprite2D
+@onready var ANIMATOR = $AnimationPlayer
+@onready var parts_skeleton = $PartsSkeleton
 
-const SPEED = 140.0
+const SPEED = 230.0
 
 enum STATES {
 	WALK,
@@ -27,6 +28,7 @@ func _ready():
 func _physics_process(delta):
 	match(state):
 		STATES.IDLE:
+			ANIMATOR.speed_scale = 1
 			ANIMATOR.play("idle")
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			
@@ -35,13 +37,17 @@ func _physics_process(delta):
 			if(Input.is_action_just_pressed("INTERACT")): state = STATES.INTERACT
 			
 		STATES.WALK:
+			ANIMATOR.speed_scale = 1.5
 			var direction = Input.get_axis("LEFT", "RIGHT")
 			
 			if(direction):
-				ANIMATOR.flip_h = direction == 1
+				if(direction == -1 || direction == 1): parts_skeleton.scale = Vector2(-direction, 1)
+				
 				ANIMATOR.play("walk")
 				velocity.x = direction * SPEED
+				
 			else: state = STATES.IDLE
+			
 			if(Input.is_action_just_pressed("ATTACK")): state = STATES.ATTACK
 			if(Input.is_action_just_pressed("INTERACT")): state = STATES.INTERACT
 			
@@ -49,6 +55,7 @@ func _physics_process(delta):
 			if(!nearby): state = STATES.WALK
 			else:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
+				ANIMATOR.speed_scale = 2
 				ANIMATOR.play('interact')
 				state = STATES.INTERACTING
 			
@@ -57,11 +64,13 @@ func _physics_process(delta):
 			
 		STATES.ATTACK:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
+			ANIMATOR.speed_scale = 3
 			ANIMATOR.play('attack')
 			state = STATES.INTERACTING
 			
 		STATES.ATTACKING:
-			if(!ANIMATOR.is_playing()): state = STATES.WALK
+			if(!ANIMATOR.is_playing()):
+				state = STATES.WALK
 			
 		STATES.PAUSED:
 			velocity.x = move_toward(velocity.x, 0, SPEED)

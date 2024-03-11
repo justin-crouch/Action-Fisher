@@ -42,6 +42,8 @@ func _ready():
 	cooldown_timer = randf_range(MIN_COOLDOWN_TIME+2, MAX_COOLDOWN_TIME)
 	state = STATES.WAIT
 	
+	Score.on_pause.connect(_on_pause)
+	
 
 func _on_tick(delta, game_time):
 	match(state):
@@ -78,7 +80,9 @@ func _on_tick(delta, game_time):
 				if(plr): plr.nearby = true
 			else: 		INTERACT.visible = false
 			
-			if(nearby && Input.is_action_just_pressed("INTERACT")): state = STATES.WAIT
+			if(nearby && Input.is_action_just_pressed("INTERACT")): 
+				await get_tree().create_timer(.3).timeout
+				state = STATES.WAIT
 		
 		STATES.DISABLE:
 			INTERACT.visible = false
@@ -93,6 +97,11 @@ func _on_tick(delta, game_time):
 		STATES.DISABLED:
 			pass
 			
+
+func _on_pause(paused):
+	if(paused): ANIMATOR.pause()
+	else: ANIMATOR.play()
+
 
 func _on_body_entered(body):
 	if(body.name != 'Player'): return

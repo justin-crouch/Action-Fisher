@@ -1,6 +1,5 @@
-res://scenes/rod.tscn
+res://scenes/tentacle.tscn
 res://scenes/scripts/rod.gd
+res://scenes/scripts/tentacle.gd
 res://scenes/main.tscn
-res://scenes/menu.tscn
-res://scenes/player.tscn
-res://scenes/boat.tscn
+res://scenes/rod.tscn
