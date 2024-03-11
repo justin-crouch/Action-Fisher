@@ -2,12 +2,14 @@ extends Area2D
 
 @onready var INTERACT = $Interact
 @onready var DISPLAY_TIMER = $DisplayTimer
-@onready var ANIMATOR = $AnimatedSprite2D
+@onready var ANIMATOR = $AnimationPlayer
+@onready var skele_sprites = $SkeleSprites
+@onready var progress_bar = $ProgressBar
 
 @export_node_path("Node2D") var BOAT_PATH
 var Boat
 
-@export_enum('TRUE', 'FALSE') var FLIP: int = 1
+@export_enum('TRUE:0', 'FALSE:2') var FLIP: int = 2
 @export_range(1.0, 30.0) var MIN_COOLDOWN_TIME = 1.0
 @export_range(1.0, 30.0) var MAX_COOLDOWN_TIME = 1.0
 @export_range(1.0, 20.0) var DISABLE_TIME = 7.0
@@ -28,7 +30,10 @@ var nearby = false
 var plr
 
 func _ready():
-	ANIMATOR.flip_h = FLIP == 0
+	#ANIMATOR.flip_h = FLIP == 0
+	progress_bar.max_value = DISABLE_TIME
+	
+	skele_sprites.apply_scale( Vector2(FLIP-1, 1) )
 	Boat = get_node(BOAT_PATH)
 	
 	await get_tree().create_timer( randf_range(0.1, 1.5) ).timeout
@@ -44,7 +49,7 @@ func _on_tick(delta, game_time):
 			cooldown_timer = randf_range(MIN_COOLDOWN_TIME, MAX_COOLDOWN_TIME)
 			
 			INTERACT.visible = false
-			DISPLAY_TIMER.visible = false
+			progress_bar.visible = false
 			
 			ANIMATOR.play("idle")
 			
@@ -55,16 +60,16 @@ func _on_tick(delta, game_time):
 			cooldown_timer -= delta
 			
 		STATES.TICK:
-			#TIMER.start()
 			disable_timer = DISABLE_TIME
-			DISPLAY_TIMER.visible = true
+			progress_bar.visible = true
 			
 			ANIMATOR.play("catch")
 			
 			state = STATES.TICKING
 			
 		STATES.TICKING:
-			DISPLAY_TIMER.text = str( snapped(disable_timer, .1) )
+			progress_bar.value = disable_timer
+			
 			if(disable_timer <= 0): state = STATES.DISABLE
 			disable_timer -= delta
 			
@@ -77,11 +82,11 @@ func _on_tick(delta, game_time):
 		
 		STATES.DISABLE:
 			INTERACT.visible = false
-			DISPLAY_TIMER.visible = false
+			
+			progress_bar.visible = false
 			Boat.remove_rod()
 			
-			ANIMATOR.stop()
-			ANIMATOR.visible = false
+			ANIMATOR.play('destroy')
 			
 			state = STATES.DISABLED
 				

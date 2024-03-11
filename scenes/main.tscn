@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://2vgou50xdtjk"]
+[gd_scene load_steps=6 format=3 uid="uid://2vgou50xdtjk"]
 
 [ext_resource type="PackedScene" uid="uid://iymn8t07gpl6" path="res://scenes/player.tscn" id="1_ach4x"]
 [ext_resource type="PackedScene" uid="uid://b7ll12xiwgikm" path="res://scenes/rod.tscn" id="2_jg3on"]
@@ -6,95 +6,85 @@
 [ext_resource type="PackedScene" uid="uid://ci7kwoh1tw8va" path="res://scenes/ui.tscn" id="5_0g0vr"]
 [ext_resource type="PackedScene" uid="uid://cfy63be300nlf" path="res://scenes/boat.tscn" id="5_uqgrn"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_koidv"]
-size = Vector2(20, 160)
-
 [node name="Main" type="Node2D"]
 
-[node name="Targets" type="Node2D" parent="."]
-
-[node name="Target1" type="Node2D" parent="Targets"]
-position = Vector2(231, 146)
-
-[node name="Target2" type="Node2D" parent="Targets"]
-position = Vector2(314, 163)
-
-[node name="Target3" type="Node2D" parent="Targets"]
-position = Vector2(157, 158)
-
 [node name="Player" parent="." instance=ExtResource("1_ach4x")]
-position = Vector2(283, 179)
+position = Vector2(833, 508)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-offset = Vector2(0, -30)
-zoom = Vector2(1.4, 1.4)
+offset = Vector2(0, -100)
+zoom = Vector2(1.2, 1.2)
 
 [node name="Rods" type="Node2D" parent="."]
 z_index = 4
+position = Vector2(494, 326)
 
 [node name="Rod1" parent="Rods" instance=ExtResource("2_jg3on")]
-position = Vector2(370, 180)
+position = Vector2(780, 234)
 BOAT_PATH = NodePath("../../Boat")
 MAX_COOLDOWN_TIME = 20.0
 
 [node name="Rod2" parent="Rods" instance=ExtResource("2_jg3on")]
-position = Vector2(55, 171)
+position = Vector2(-202, 168)
 BOAT_PATH = NodePath("../../Boat")
 FLIP = 0
 MAX_COOLDOWN_TIME = 20.0
 
 [node name="Rod3" parent="Rods" instance=ExtResource("2_jg3on")]
-position = Vector2(91, 170)
+position = Vector2(-309, 169)
 BOAT_PATH = NodePath("../../Boat")
 FLIP = 0
 MAX_COOLDOWN_TIME = 20.0
 
 [node name="Rod4" parent="Rods" instance=ExtResource("2_jg3on")]
-position = Vector2(407, 178)
+position = Vector2(680, 231)
 BOAT_PATH = NodePath("../../Boat")
 MAX_COOLDOWN_TIME = 20.0
 
 [node name="Tentacles" type="Node2D" parent="."]
+position = Vector2(722, 774)
 
 [node name="Tentacle1" parent="Tentacles" instance=ExtResource("3_tapio")]
-position = Vector2(245, 293)
-TARGET_POS = NodePath("../../Targets/Target1")
+position = Vector2(-95, 4)
+TARGET_POS = NodePath("../Targets/Target1")
 BOAT_PATH = NodePath("../../Boat")
 MIN_COOLDOWN_TIME = 1.0
 MAX_COOLDOWN_TIME = 20.0
 HIT_COOLDOWN = 0.2
 
 [node name="Tentacle2" parent="Tentacles" instance=ExtResource("3_tapio")]
-position = Vector2(309, 292)
-TARGET_POS = NodePath("../../Targets/Target2")
+TARGET_POS = NodePath("../Targets/Target2")
 BOAT_PATH = NodePath("../../Boat")
 MIN_COOLDOWN_TIME = 1.0
 MAX_COOLDOWN_TIME = 20.0
 HIT_COOLDOWN = 0.2
 
 [node name="Tentacle3" parent="Tentacles" instance=ExtResource("3_tapio")]
-position = Vector2(180, 287)
-TARGET_POS = NodePath("../../Targets/Target3")
+position = Vector2(97, -1)
+TARGET_POS = NodePath("../Targets/Target3")
 BOAT_PATH = NodePath("../../Boat")
 MIN_COOLDOWN_TIME = 1.0
 MAX_COOLDOWN_TIME = 20.0
 HIT_COOLDOWN = 0.2
 
+[node name="Targets" type="Node2D" parent="Tentacles"]
+position = Vector2(-234, -461)
+
+[node name="Target1" type="Node2D" parent="Tentacles/Targets"]
+position = Vector2(248, 118)
+
+[node name="Target2" type="Node2D" parent="Tentacles/Targets"]
+position = Vector2(601, 129)
+
+[node name="Target3" type="Node2D" parent="Tentacles/Targets"]
+position = Vector2(-24, 107)
+
 [node name="Boat" parent="." instance=ExtResource("5_uqgrn")]
-position = Vector2(224, 152)
+position = Vector2(737, 660)
+scale = Vector2(0.8, 0.8)
 TENTACLES = NodePath("../Tentacles")
 RODS = NodePath("../Rods")
 metadata/_edit_lock_ = true
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(41, 93)
-shape = SubResource("RectangleShape2D_koidv")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(420, 103)
-shape = SubResource("RectangleShape2D_koidv")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

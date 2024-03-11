@@ -1,16 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfy63be300nlf"]
+[gd_scene load_steps=6 format=3 uid="uid://cfy63be300nlf"]
 
 [ext_resource type="Script" path="res://scenes/scripts/boat.gd" id="1_fo74y"]
-[ext_resource type="Texture2D" uid="uid://dg38ti8b43ckd" path="res://assets/boat_back.png" id="2_0qxh6"]
-[ext_resource type="Texture2D" uid="uid://dewp6uuyurbyr" path="res://assets/boat_front.png" id="3_o6qap"]
+[ext_resource type="Texture2D" uid="uid://qojythlndxq0" path="res://assets/FullAssets/back.svg" id="2_73v7v"]
+[ext_resource type="Texture2D" uid="uid://b4jcs8tugst7g" path="res://assets/FullAssets/post.svg" id="3_cnnd4"]
+[ext_resource type="Texture2D" uid="uid://cy6iowk7edyt2" path="res://assets/FullAssets/bottom.svg" id="4_pcmjs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ghcj7"]
+size = Vector2(33, 362)
 
 [node name="Boat" type="Node2D"]
 script = ExtResource("1_fo74y")
 
-[node name="BoatBack" type="Sprite2D" parent="."]
-z_index = 1
-texture = ExtResource("2_0qxh6")
+[node name="Back" type="Sprite2D" parent="."]
+position = Vector2(259, -280)
+texture = ExtResource("2_73v7v")
 
-[node name="BoatFront" type="Sprite2D" parent="."]
-z_index = 4
-texture = ExtResource("3_o6qap")
+[node name="Post" type="Sprite2D" parent="."]
+position = Vector2(-448, -471)
+texture = ExtResource("3_cnnd4")
+
+[node name="Bottom" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(-14, -76)
+texture = ExtResource("4_pcmjs")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-248, -312)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-501.5, -9)
+shape = SubResource("RectangleShape2D_ghcj7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(981, 39)
+shape = SubResource("RectangleShape2D_ghcj7")

@@ -1,106 +1,267 @@
-[gd_scene load_steps=14 format=3 uid="uid://b7ll12xiwgikm"]
+[gd_scene load_steps=13 format=3 uid="uid://b7ll12xiwgikm"]
 
 [ext_resource type="Script" path="res://scenes/scripts/rod.gd" id="1_otodr"]
-[ext_resource type="Texture2D" uid="uid://bl4cd8rxr8ksj" path="res://assets/rod.png" id="2_7f2vo"]
-[ext_resource type="Texture2D" uid="uid://c0j00ivlaqbd8" path="res://assets/rod_catch.png" id="2_vernh"]
+[ext_resource type="Texture2D" uid="uid://dqb0jlkikxmyh" path="res://assets/FullAssets/rod.svg" id="2_yrqki"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kcb5u"]
-size = Vector2(16, 47)
+size = Vector2(24.5, 143.75)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mdx5c"]
-atlas = ExtResource("2_vernh")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_wgq3y"]
+target_nodepath = NodePath("../TargetMid")
+joint_one_bone_idx = 0
+joint_one_bone2d_node = NodePath("Base_1")
+joint_two_bone_idx = 1
+joint_two_bone2d_node = NodePath("Base_1/1_2")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2b8ag"]
-atlas = ExtResource("2_vernh")
-region = Rect2(32, 0, 32, 32)
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_ey47l"]
+target_nodepath = NodePath("../TargetMid2")
+joint_one_bone_idx = 1
+joint_one_bone2d_node = NodePath("Base_1/1_2")
+joint_two_bone_idx = 2
+joint_two_bone2d_node = NodePath("Base_1/1_2/2_3")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lpxfu"]
-atlas = ExtResource("2_vernh")
-region = Rect2(64, 0, 32, 32)
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_e4q20"]
+target_nodepath = NodePath("../TargetTip")
+joint_one_bone_idx = 2
+joint_one_bone2d_node = NodePath("Base_1/1_2/2_3")
+joint_two_bone_idx = 3
+joint_two_bone2d_node = NodePath("Base_1/1_2/2_3/3_4")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6wgdo"]
-atlas = ExtResource("2_vernh")
-region = Rect2(96, 0, 32, 32)
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_ds57y"]
+modification_count = 3
+modifications/0 = SubResource("SkeletonModification2DTwoBoneIK_wgq3y")
+modifications/1 = SubResource("SkeletonModification2DTwoBoneIK_ey47l")
+modifications/2 = SubResource("SkeletonModification2DTwoBoneIK_e4q20")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c4wbx"]
-atlas = ExtResource("2_7f2vo")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="Animation" id="Animation_4mppw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkeleSprites/Skeleton2D/Base_1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.243944]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SkeleSprites/Skeleton2D/Base_1/1_2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.402082]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SkeleSprites/Skeleton2D/Base_1/1_2/2_3:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.458057]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SkeleSprites/Skeleton2D/Base_1/1_2/2_3/3_4:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.67405]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oqw8v"]
-atlas = ExtResource("2_7f2vo")
-region = Rect2(32, 0, 32, 32)
+[sub_resource type="Animation" id="Animation_if5e7"]
+resource_name = "catch"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkeleSprites/Skeleton2D/Base_1:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.7, 0.9, 1.1, 1.3, 1.4, 1.5),
+"transitions": PackedFloat32Array(0.153893, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0620456, 0.235586, 0.246432, 0.247508, 0.258343, 0.431895, 0.43096, 0.416933, 0.35615, 0.0985739, 0.062104, 0.0620456]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SkeleSprites/Skeleton2D/Base_1/1_2:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.7, 0.9, 1.1, 1.3, 1.4, 1.5),
+"transitions": PackedFloat32Array(0.153893, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.56092, 0.628347, 0.632561, 0.632979, 0.637189, 0.704621, 0.704258, 0.698808, 0.675191, 0.575113, 0.560943, 0.56092]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SkeleSprites/Skeleton2D/Base_1/1_2/2_3:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.7, 0.9, 1.1, 1.3, 1.4, 1.5),
+"transitions": PackedFloat32Array(0.153893, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.593235, 0.731732, 0.740388, 0.741246, 0.749894, 0.8884, 0.887654, 0.876459, 0.82795, 0.622387, 0.593282, 0.593235]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SkeleSprites/Skeleton2D/Base_1/1_2/2_3/3_4:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.7, 0.9, 1.1, 1.3, 1.4, 1.5),
+"transitions": PackedFloat32Array(0.153893, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.800644, 0.939337, 0.948005, 0.948865, 0.957524, 1.09623, 1.09548, 1.08427, 1.03569, 0.829838, 0.800691, 0.800644]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b4ty0"]
-atlas = ExtResource("2_7f2vo")
-region = Rect2(64, 0, 32, 32)
+[sub_resource type="Animation" id="Animation_o173f"]
+resource_name = "destroy"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkeleSprites/Skeleton2D/Base_1/1_2/2_3/3_4:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 1.2),
+"transitions": PackedFloat32Array(3.73213, 1, 1, 7.99999, 1),
+"update": 0,
+"values": [0.811991, 0.812276, 0.813132, 0.814558, -7.15256e-07]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SkeleSprites/Skeleton2D/Base_1/1_2/2_3:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 1.2),
+"transitions": PackedFloat32Array(3.73213, 1, 1, 7.99999, 1),
+"update": 0,
+"values": [0.584288, 0.590266, 0.608202, 0.638096, -0.0514708]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SkeleSprites/Skeleton2D/Base_1/1_2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 1.2),
+"transitions": PackedFloat32Array(3.73213, 1, 1, 7.99999, 1),
+"update": 0,
+"values": [0.539434, 0.588876, 0.737203, 0.984415, 1.55768]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SkeleSprites/Skeleton2D/Base_1:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 1.2),
+"transitions": PackedFloat32Array(3.73213, 1, 1, 7.99999, 1),
+"update": 0,
+"values": [0.0745445, 0.146165, 0.361025, 0.719125, 1.61099]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v3arr"]
-atlas = ExtResource("2_7f2vo")
-region = Rect2(96, 0, 32, 32)
+[sub_resource type="Animation" id="Animation_vj0hg"]
+resource_name = "idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkeleSprites/Skeleton2D/Base_1:rotation")
+tracks/0/interp = 4
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.243944, 0.243944, 0.243944, 0.243944, 0.243944, 0.243944, 0.243944, 0.243944, 0.243944, 0.243944, 0.243944, 0.243944, 0.243944, 0.243944, 0.243944, 0.243945, 0.243944]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SkeleSprites/Skeleton2D/Base_1/1_2:rotation")
+tracks/1/interp = 4
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.402082, 0.402082, 0.402082, 0.402082, 0.402082, 0.402082, 0.402082, 0.402082, 0.402082, 0.402082, 0.402082, 0.402082, 0.402082, 0.402082, 0.402082, 0.402082, 0.402082]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SkeleSprites/Skeleton2D/Base_1/1_2/2_3:rotation")
+tracks/2/interp = 4
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.458057, 0.491465, 0.516024, 0.533097, 0.544043, 0.550226, 0.553005, 0.553742, 0.553799, 0.554536, 0.557316, 0.563498, 0.574445, 0.591517, 0.616077, 0.649484, 0.458057]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SkeleSprites/Skeleton2D/Base_1/1_2/2_3/3_4:rotation")
+tracks/3/interp = 4
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.67405, 0.68633, 0.695358, 0.701634, 0.705658, 0.70793, 0.708952, 0.709223, 0.709244, 0.709515, 0.710536, 0.712809, 0.716833, 0.723109, 0.732137, 0.744417, 0.67405]
+}
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_f0207"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mdx5c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2b8ag")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lpxfu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6wgdo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mdx5c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mdx5c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mdx5c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mdx5c")
-}],
-"loop": true,
-"name": &"catch",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c4wbx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oqw8v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b4ty0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v3arr")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 1.0
-}]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ywgsx"]
+_data = {
+"RESET": SubResource("Animation_4mppw"),
+"catch": SubResource("Animation_if5e7"),
+"destroy": SubResource("Animation_o173f"),
+"idle": SubResource("Animation_vj0hg")
+}
 
 [node name="Rod" type="Area2D" groups=["Interactable"]]
 script = ExtResource("1_otodr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -12)
+position = Vector2(1.75, -63.125)
 shape = SubResource("RectangleShape2D_kcb5u")
 
 [node name="Interact" type="Label" parent="."]
-visible = false
-offset_left = -35.0
-offset_top = -63.0
-offset_right = 35.0
-offset_bottom = -40.0
+offset_left = -34.0
+offset_top = -168.0
+offset_right = 36.0
+offset_bottom = -145.0
 text = "SPACE"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -114,11 +275,124 @@ offset_bottom = -16.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -16)
-sprite_frames = SubResource("SpriteFrames_f0207")
-animation = &"idle"
-frame_progress = 0.747768
+[node name="SkeleSprites" type="Node2D" parent="."]
+
+[node name="RodSprites" type="Node2D" parent="SkeleSprites"]
+
+[node name="Base" type="Sprite2D" parent="SkeleSprites/RodSprites"]
+texture = ExtResource("2_yrqki")
+offset = Vector2(3, -36)
+region_enabled = true
+region_rect = Rect2(0, 136, 16, 72)
+
+[node name="P1" type="Sprite2D" parent="SkeleSprites/RodSprites/Base"]
+z_index = 12
+position = Vector2(1, -70)
+rotation = 0.243944
+scale = Vector2(0.999844, 0.999844)
+texture = ExtResource("2_yrqki")
+offset = Vector2(3, -16)
+region_enabled = true
+region_rect = Rect2(0, 104, 16, 32)
+
+[node name="P2" type="Sprite2D" parent="SkeleSprites/RodSprites/Base/P1"]
+z_index = 12
+position = Vector2(0, -32)
+rotation = 0.402082
+scale = Vector2(0.999866, 0.999866)
+texture = ExtResource("2_yrqki")
+offset = Vector2(3, -16)
+region_enabled = true
+region_rect = Rect2(0, 72, 16, 32)
+
+[node name="P3" type="Sprite2D" parent="SkeleSprites/RodSprites/Base/P1/P2"]
+z_index = 12
+position = Vector2(0, -32)
+rotation = 0.458057
+scale = Vector2(0.999843, 0.999843)
+texture = ExtResource("2_yrqki")
+offset = Vector2(3, -20)
+region_enabled = true
+region_rect = Rect2(0, 32, 16, 40)
+
+[node name="P4" type="Sprite2D" parent="SkeleSprites/RodSprites/Base/P1/P2/P3"]
+z_index = 12
+position = Vector2(1.52588e-05, -40)
+rotation = 0.67405
+scale = Vector2(0.999903, 0.999903)
+texture = ExtResource("2_yrqki")
+offset = Vector2(3, -16)
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 32)
+
+[node name="Skeleton2D" type="Skeleton2D" parent="SkeleSprites"]
+visible = false
+modulate = Color(1, 1, 1, 0.243137)
+position = Vector2(0, 1)
+modification_stack = SubResource("SkeletonModificationStack2D_ds57y")
+
+[node name="Base_1" type="Bone2D" parent="SkeleSprites/Skeleton2D"]
+position = Vector2(1, -71)
+rotation = 0.243944
+scale = Vector2(0.999844, 0.999844)
+rest = Transform2D(1, 0, 0, 1, 0, -71)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="SkeleSprites/Skeleton2D/Base_1"]
+remote_path = NodePath("../../../RodSprites/Base/P1")
+
+[node name="1_2" type="Bone2D" parent="SkeleSprites/Skeleton2D/Base_1"]
+position = Vector2(0, -32)
+rotation = 0.402082
+scale = Vector2(0.999866, 0.999866)
+rest = Transform2D(1, 0, 0, 1, 0, -32)
+
+[node name="RemoteTransform2D2" type="RemoteTransform2D" parent="SkeleSprites/Skeleton2D/Base_1/1_2"]
+remote_path = NodePath("../../../../RodSprites/Base/P1/P2")
+
+[node name="2_3" type="Bone2D" parent="SkeleSprites/Skeleton2D/Base_1/1_2"]
+position = Vector2(0, -32)
+rotation = 0.458057
+scale = Vector2(0.999843, 0.999843)
+rest = Transform2D(1, 0, 0, 1, 0, -32)
+
+[node name="RemoteTransform2D3" type="RemoteTransform2D" parent="SkeleSprites/Skeleton2D/Base_1/1_2/2_3"]
+remote_path = NodePath("../../../../../RodSprites/Base/P1/P2/P3")
+
+[node name="3_4" type="Bone2D" parent="SkeleSprites/Skeleton2D/Base_1/1_2/2_3"]
+position = Vector2(0, -40)
+rotation = 0.67405
+scale = Vector2(0.999903, 0.999903)
+rest = Transform2D(1, 0, 0, 1, 0, -40)
+
+[node name="RemoteTransform2D4" type="RemoteTransform2D" parent="SkeleSprites/Skeleton2D/Base_1/1_2/2_3/3_4"]
+remote_path = NodePath("../../../../../../RodSprites/Base/P1/P2/P3/P4")
+
+[node name="TargetTip" type="Marker2D" parent="SkeleSprites"]
+visible = false
+position = Vector2(34, 41)
+rotation = 0.322558
+
+[node name="TargetMid" type="Marker2D" parent="SkeleSprites"]
+visible = false
+position = Vector2(52, -43)
+
+[node name="TargetMid2" type="Marker2D" parent="SkeleSprites"]
+visible = false
+position = Vector2(31, 4)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ywgsx")
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -45.0
+offset_top = -139.0
+offset_right = -14.0
+offset_bottom = -80.0
+max_value = 7.0
+fill_mode = 3
+show_percentage = false
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

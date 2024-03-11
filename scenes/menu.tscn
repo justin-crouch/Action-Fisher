@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbvr4gtvlla6o"]
+[gd_scene load_steps=2 format=3 uid="uid://dbvr4gtvlla6o"]
 
 [ext_resource type="Script" path="res://scenes/scripts/menu.gd" id="1_ykjgp"]
-[ext_resource type="Texture2D" uid="uid://dg38ti8b43ckd" path="res://assets/boat_back.png" id="2_gauiu"]
-[ext_resource type="Texture2D" uid="uid://dewp6uuyurbyr" path="res://assets/boat_front.png" id="3_s667b"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_ykjgp")
@@ -36,20 +34,6 @@ offset_top = 18.0
 offset_right = 385.0
 offset_bottom = 41.0
 text = "Action Fisher"
-
-[node name="Boat" type="Node2D" parent="."]
-position = Vector2(275, 124)
-metadata/_edit_group_ = true
-
-[node name="BoatBack" type="Sprite2D" parent="Boat"]
-texture = ExtResource("2_gauiu")
-
-[node name="BoatFront" type="Sprite2D" parent="Boat"]
-texture = ExtResource("3_s667b")
-
-[node name="Camera2D" type="Camera2D" parent="Boat"]
-offset = Vector2(-150, 0)
-zoom = Vector2(0.6, 0.6)
 
 [connection signal="pressed" from="CanvasLayer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/Setting" to="." method="_on_play_pressed"]

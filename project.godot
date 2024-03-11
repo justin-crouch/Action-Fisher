@@ -21,8 +21,9 @@ Score="*res://scenes/scripts/score.gd"
 
 [display]
 
-window/size/viewport_width=480
-window/size/viewport_height=270
+window/size/viewport_width=1440
+window/size/viewport_height=810
+window/size/resizable=false
 window/size/window_width_override=1440
 window/size/window_height_override=810
 window/stretch/mode="canvas_items"
@@ -63,6 +64,5 @@ PAUSE={
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
