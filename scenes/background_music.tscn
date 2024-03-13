@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://jgbmx25t1i1d"]
+
+[ext_resource type="AudioStream" uid="uid://cu1ji7wlid04p" path="res://assets/Audio/heilir-sir-norse-viking-background-music-114582.mp3" id="1_fqcgr"]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D"]
+z_index = 15
+position = Vector2(-2, 3)
+stream = ExtResource("1_fqcgr")
+volume_db = -20.0
+autoplay = true

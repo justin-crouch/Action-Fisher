@@ -4,6 +4,13 @@ extends Area2D
 @onready var animation_player = $AnimationPlayer
 @onready var parts = $SkeleParts/Parts
 @onready var skele_parts = $SkeleParts
+@onready var attack = $Attack
+@onready var hurt = $Hurt
+@onready var emerge_1 = $Emerge1
+@onready var emerge_2 = $Emerge2
+@onready var emerge_3 = $Emerge3
+
+var rdm_noise
 
 @export_node_path('Node2D') var TARGET_POS
 @export_node_path("Node2D") var BOAT_PATH
@@ -44,6 +51,7 @@ var state: STATES
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	rdm_noise = [emerge_1, emerge_2 ,emerge_3]
 	skele_parts.scale = Vector2(FLIP-1, 1)
 	reset_color()
 	animation_player.play_backwards("appear")
@@ -73,8 +81,10 @@ func _on_tick(delta, game_time):
 			cooldown_timer -= delta
 			
 		STATES.ATTACK:
+			state = STATES.INACTIVE
 			hits = MAX_HITS
 			atk_timer = lerp( 1.5, ATK_COOLDOWN, Boat.rods / 4.0 )
+			
 			
 			animation_player.play("appear")
 			animation_player.queue("idle")
@@ -83,6 +93,7 @@ func _on_tick(delta, game_time):
 			tween.tween_property($".", 'global_position', get_node(TARGET_POS).global_position, .5)
 			await tween.finished
 			
+			if(randf() < .3): rdm_noise.pick_random().play()
 			reset_color()
 			
 			state = STATES.ATTACKING 
@@ -93,6 +104,7 @@ func _on_tick(delta, game_time):
 			
 			atk_timer -= delta
 			if(atk_timer <= 0):
+				attack.play()
 				animation_player.play("attack")
 				animation_player.queue("idle")
 				
@@ -106,9 +118,11 @@ func _on_tick(delta, game_time):
 				state = STATES.HURT
 			
 		STATES.HURT:
+			hurt.play()
 			animation_player.play("hurt")
 			animation_player.queue("idle")
 			state = STATES.HURTING
+			
 			await get_tree().create_timer(HIT_COOLDOWN).timeout
 			reset_color()
 			
@@ -116,10 +130,12 @@ func _on_tick(delta, game_time):
 			else: state = STATES.ATTACKING
 			
 		STATES.RETREAT:
-			STATES.RETREATING
+			state = STATES.RETREATING
 			INTERACT.visible = false
-			#animation_player.stop()
+			
 			reset_color()
+			
+			if(randf() < .3): rdm_noise.pick_random().play()
 			
 			animation_player.speed_scale = .8
 			animation_player.play_backwards("appear")

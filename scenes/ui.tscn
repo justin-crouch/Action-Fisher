@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://ci7kwoh1tw8va"]
+[gd_scene load_steps=15 format=3 uid="uid://ci7kwoh1tw8va"]
 
 [ext_resource type="Script" path="res://scenes/scripts/ui.gd" id="1_3gm7u"]
+[ext_resource type="AudioStream" uid="uid://qbgc6u16fqit" path="res://assets/Audio/wrench-02-101112.mp3" id="2_5xtr3"]
 [ext_resource type="FontFile" uid="uid://3wo0eceucdpw" path="res://assets/Mythoz.ttf" id="2_iobp8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1vl8"]
@@ -160,6 +161,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3gm7u")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_5xtr3")
+volume_db = 3.0
 
 [node name="HealthTime" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -389,9 +394,15 @@ modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 100
 
+[connection signal="mouse_entered" from="Pause/VBox/Resume" to="." method="_on_resume_mouse_entered"]
 [connection signal="pressed" from="Pause/VBox/Resume" to="." method="_on_resume_pressed"]
+[connection signal="mouse_entered" from="Pause/VBox/Menu" to="." method="_on_menu_mouse_entered"]
 [connection signal="pressed" from="Pause/VBox/Menu" to="." method="_on_menu_pressed"]
+[connection signal="mouse_entered" from="Pause/VBox/Exit" to="." method="_on_exit_mouse_entered"]
 [connection signal="pressed" from="Pause/VBox/Exit" to="." method="_on_exit_pressed"]
+[connection signal="mouse_entered" from="GameOver/VBox2/Replay" to="." method="_on_replay_mouse_entered"]
 [connection signal="pressed" from="GameOver/VBox2/Replay" to="." method="_on_replay_pressed"]
+[connection signal="mouse_entered" from="GameOver/VBox2/Menu" to="." method="_on_menu_mouse_entered"]
 [connection signal="pressed" from="GameOver/VBox2/Menu" to="." method="_on_menu_pressed"]
+[connection signal="mouse_entered" from="GameOver/VBox2/Exit" to="." method="_on_exit_mouse_entered"]
 [connection signal="pressed" from="GameOver/VBox2/Exit" to="." method="_on_exit_pressed"]

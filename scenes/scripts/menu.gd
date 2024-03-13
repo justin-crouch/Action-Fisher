@@ -1,10 +1,8 @@
 extends Control
 @onready var animation_player = $AnimationPlayer
-#@onready var camera_2d = $Target/Camera2D
+@onready var audio_stream_player_2d = $VBoxContainer/HBoxContainer/Buttons/AudioStreamPlayer2D
 
 func _ready():
-	#camera_2d.position = Vector2(-30, -45)
-	#camera_2d.zoom = Vector2(1, 1)
 	pass
 
 func _on_play_pressed():
@@ -20,3 +18,13 @@ func _on_exit_pressed():
 
 func _on_options_pressed():
 	pass # Replace with function body.
+
+
+func _on_play_mouse_entered():
+	audio_stream_player_2d.play()
+
+func _on_options_mouse_entered():
+	audio_stream_player_2d.play()
+
+func _on_exit_mouse_entered():
+	audio_stream_player_2d.play()

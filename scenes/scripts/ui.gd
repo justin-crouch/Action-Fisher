@@ -6,6 +6,7 @@ extends Control
 
 @onready var game_over = $GameOver
 @onready var over_animation = $GameOver/AnimationPlayer
+@onready var audio_stream_player_2d = $AudioStreamPlayer2D
 
 @onready var PAUSE = $Pause
 @export_node_path("Node2D") var BOAT_PATH
@@ -34,6 +35,8 @@ func _on_paused(paused):
 func _on_end_game():
 	PAUSE.visible = false
 	game_over.visible = true
+	
+	get_node("GameOver/VBox2/ScoreDisplay/Time").text = Score.display_score()
 	over_animation.play("end_game")
 
 func _on_resume_pressed():
@@ -46,3 +49,9 @@ func _on_exit_pressed():
 
 func _on_replay_pressed():
 	get_tree().reload_current_scene()
+
+
+func _on_resume_mouse_entered(): audio_stream_player_2d.play()
+func _on_menu_mouse_entered(): audio_stream_player_2d.play()
+func _on_exit_mouse_entered(): audio_stream_player_2d.play()
+func _on_replay_mouse_entered(): audio_stream_player_2d.play()

@@ -1,8 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://dcsevfmhhkf1g"]
+[gd_scene load_steps=17 format=3 uid="uid://dcsevfmhhkf1g"]
 
 [ext_resource type="Script" path="res://scenes/scripts/tentacle.gd" id="1_4y8wy"]
 [ext_resource type="FontFile" uid="uid://3wo0eceucdpw" path="res://assets/Mythoz.ttf" id="2_dwpc3"]
 [ext_resource type="Texture2D" uid="uid://bf4rvtb0wf3f1" path="res://assets/FullAssets/tentactle.svg" id="2_lw4ek"]
+[ext_resource type="AudioStream" uid="uid://be2sd6uftebau" path="res://assets/Audio/tentacle-attack.mp3" id="4_84igg"]
+[ext_resource type="AudioStream" uid="uid://bopclpyqijla1" path="res://assets/Audio/tomato-squishwet-103934.mp3" id="5_ka237"]
+[ext_resource type="AudioStream" uid="uid://di0otd024crc7" path="res://assets/Audio/splash-01-35899.mp3" id="6_1ytiq"]
+[ext_resource type="AudioStream" uid="uid://cu14c6cjvkcfk" path="res://assets/Audio/sea-monster-scream-98276.mp3" id="7_xp25l"]
+[ext_resource type="AudioStream" uid="uid://ng3ijugaa3la" path="res://assets/Audio/dinosaur-1-86566.mp3" id="8_q3elr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ryws6"]
 size = Vector2(175.714, 283)
@@ -972,10 +977,10 @@ scale = Vector2(1, 1.4)
 
 [node name="Tip1" type="Sprite2D" parent="SkeleParts/Parts"]
 modulate = Color(0.996078, 0.462745, 0.396078, 1)
-position = Vector2(-318.298, -0.922138)
-rotation = 0.507578
-scale = Vector2(0.902835, 0.833707)
-skew = 0.32091
+position = Vector2(127.602, -518.19)
+rotation = -0.9049
+scale = Vector2(0.79214, 0.939517)
+skew = -0.284688
 texture = ExtResource("2_lw4ek")
 offset = Vector2(35.7143, -16.8)
 region_enabled = true
@@ -983,10 +988,10 @@ region_rect = Rect2(720, 0, 72, 56)
 
 [node name="Tip2" type="Sprite2D" parent="SkeleParts/Parts"]
 modulate = Color(0.996078, 0.462745, 0.396078, 1)
-position = Vector2(-346.974, -33.9819)
-rotation = 0.943894
-scale = Vector2(0.783345, 0.946863)
-skew = 0.27289
+position = Vector2(117.955, -479.914)
+rotation = -1.22043
+scale = Vector2(0.735825, 0.984246)
+skew = -0.166031
 texture = ExtResource("2_lw4ek")
 offset = Vector2(27.1429, -21)
 region_enabled = true
@@ -994,10 +999,10 @@ region_rect = Rect2(664, 0, 56, 56)
 
 [node name="Tip3" type="Sprite2D" parent="SkeleParts/Parts"]
 modulate = Color(0.996078, 0.462745, 0.396078, 1)
-position = Vector2(-354.17, -84.7818)
-rotation = 1.48459
-scale = Vector2(0.715581, 0.999062)
-skew = 0.0421431
+position = Vector2(122.545, -428.96)
+rotation = -1.60588
+scale = Vector2(0.714496, 0.999839)
+skew = 0.0171794
 texture = ExtResource("2_lw4ek")
 offset = Vector2(35.7143, -23.8)
 region_enabled = true
@@ -1005,10 +1010,10 @@ region_rect = Rect2(592, 0, 72, 56)
 
 [node name="Tip4" type="Sprite2D" parent="SkeleParts/Parts"]
 modulate = Color(0.996078, 0.462745, 0.396078, 1)
-position = Vector2(-330.746, -133.022)
-rotation = 2.07203
-scale = Vector2(0.758453, 0.96692)
-skew = -0.228647
+position = Vector2(138.317, -379.16)
+rotation = -1.82473
+scale = Vector2(0.725583, 0.991824)
+skew = 0.122283
 texture = ExtResource("2_lw4ek")
 offset = Vector2(35.7143, -26.6)
 region_enabled = true
@@ -1016,10 +1021,10 @@ region_rect = Rect2(512, 0, 72, 56)
 
 [node name="Mid2" type="Sprite2D" parent="SkeleParts/Parts"]
 modulate = Color(0.996078, 0.462745, 0.396078, 1)
-position = Vector2(-202.616, -195.439)
-rotation = 2.88638
-scale = Vector2(0.970742, 0.753561)
-skew = -0.217486
+position = Vector2(105.385, -268.428)
+rotation = -1.10201
+scale = Vector2(0.752913, 0.971246)
+skew = -0.215929
 texture = ExtResource("2_lw4ek")
 offset = Vector2(40, -26.6)
 region_enabled = true
@@ -1027,10 +1032,10 @@ region_rect = Rect2(432, 0, 80, 56)
 
 [node name="Mid3" type="Sprite2D" parent="SkeleParts/Parts"]
 modulate = Color(0.996078, 0.462745, 0.396078, 1)
-position = Vector2(-122.958, -190.157)
-rotation = -3.07538
-scale = Vector2(0.997902, 0.717207)
-skew = 0.0630258
+position = Vector2(61.9804, -220.427)
+rotation = -0.835635
+scale = Vector2(0.80894, 0.925101)
+skew = -0.302905
 texture = ExtResource("2_lw4ek")
 offset = Vector2(40, -26.6)
 region_enabled = true
@@ -1038,10 +1043,10 @@ region_rect = Rect2(432, 0, 80, 56)
 
 [node name="Mid" type="Sprite2D" parent="SkeleParts/Parts"]
 modulate = Color(0.996078, 0.462745, 0.396078, 1)
-position = Vector2(-277.76, -175.834)
-rotation = 2.462
-scale = Vector2(0.851506, 0.886077)
-skew = -0.32798
+position = Vector2(132.599, -322.163)
+rotation = -1.4708
+scale = Vector2(0.716033, 0.998745)
+skew = -0.0488532
 texture = ExtResource("2_lw4ek")
 offset = Vector2(40, -26.6)
 region_enabled = true
@@ -1049,10 +1054,10 @@ region_rect = Rect2(432, 0, 80, 56)
 
 [node name="Mid4" type="Sprite2D" parent="SkeleParts/Parts"]
 modulate = Color(0.996078, 0.462745, 0.396078, 1)
-position = Vector2(-53.6425, -161.443)
-rotation = -2.75484
-scale = Vector2(0.937996, 0.793956)
-skew = 0.286911
+position = Vector2(29.1424, -168.308)
+rotation = -1.0054
+scale = Vector2(0.770496, 0.957361)
+skew = -0.252321
 texture = ExtResource("2_lw4ek")
 offset = Vector2(40, -26.6)
 region_enabled = true
@@ -1060,10 +1065,10 @@ region_rect = Rect2(432, 0, 80, 56)
 
 [node name="Mid5" type="Sprite2D" parent="SkeleParts/Parts"]
 modulate = Color(0.996078, 0.462745, 0.396078, 1)
-position = Vector2(-12.7231, -113.384)
-rotation = -2.28573
-scale = Vector2(0.803889, 0.929498)
-skew = 0.297975
+position = Vector2(9.1438, -114.019)
+rotation = -1.21391
+scale = Vector2(0.736643, 0.983646)
+skew = -0.168903
 texture = ExtResource("2_lw4ek")
 offset = Vector2(40, -26.6)
 region_enabled = true
@@ -1071,9 +1076,9 @@ region_rect = Rect2(432, 0, 80, 56)
 
 [node name="Mid6" type="Sprite2D" parent="SkeleParts/Parts"]
 position = Vector2(1.42908, -57.1429)
-rotation = -1.81731
-scale = Vector2(0.724936, 0.992306)
-skew = 0.118829
+rotation = -1.43598
+scale = Vector2(0.717467, 0.99772)
+skew = -0.0657232
 texture = ExtResource("2_lw4ek")
 offset = Vector2(40, -26.6)
 region_enabled = true
@@ -1187,6 +1192,28 @@ rest = Transform2D(1, 0, 0, 1, 54.2857, -4.2)
 
 [node name="RemoteTransform2D6" type="RemoteTransform2D" parent="SkeleParts/Skeleton2D/0/1/2/3/4/5/6/7/8/9/10"]
 remote_path = NodePath("../../../../../../../../../../../../../Parts/Tip1")
+
+[node name="Attack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_84igg")
+volume_db = -1.552
+pitch_scale = 1.19
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ka237")
+volume_db = 3.105
+pitch_scale = 1.18
+
+[node name="Emerge1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_1ytiq")
+pitch_scale = 0.55
+
+[node name="Emerge2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_xp25l")
+volume_db = -2.328
+pitch_scale = 0.92
+
+[node name="Emerge3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_q3elr")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

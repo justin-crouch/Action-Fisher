@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var ANIMATOR = $AnimationPlayer
 @onready var parts_skeleton = $PartsSkeleton
+@onready var swing = $Swing
 
 const SPEED = 230.0
 
@@ -64,6 +65,7 @@ func _physics_process(delta):
 			
 		STATES.ATTACK:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
+			swing.play()
 			ANIMATOR.speed_scale = 3
 			ANIMATOR.play('attack')
 			state = STATES.INTERACTING

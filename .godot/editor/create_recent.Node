@@ -1,3 +1,4 @@
+AudioStreamPlayer2D
 PanelContainer
 AnimationPlayer
 HSeparator
@@ -11,4 +12,3 @@ RemoteTransform2D
 Polygon2D
 Node2D
 Line2D
-Marker2D

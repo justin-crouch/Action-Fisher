@@ -5,6 +5,9 @@ extends Area2D
 @onready var ANIMATOR = $AnimationPlayer
 @onready var skele_sprites = $SkeleSprites
 @onready var progress_bar = $ProgressBar
+@onready var catch = $Catch
+@onready var fix = $Fix
+@onready var _break = $Break
 
 @export_node_path("Node2D") var BOAT_PATH
 var Boat
@@ -65,6 +68,7 @@ func _on_tick(delta, game_time):
 			progress_bar.visible = true
 			
 			ANIMATOR.play("catch")
+			catch.play()
 			
 			state = STATES.TICKING
 			
@@ -76,12 +80,13 @@ func _on_tick(delta, game_time):
 			
 			if(nearby):
 				interact.visible = true
-				#progress_bar.visible = true
+				
 				if(plr): plr.nearby = true
 			else: 		interact.visible = false
 			
 			if(nearby && Input.is_action_just_pressed("INTERACT")): 
 				await get_tree().create_timer(.3).timeout
+				fix.play()
 				state = STATES.WAIT
 		
 		STATES.DISABLE:
@@ -91,6 +96,7 @@ func _on_tick(delta, game_time):
 			Boat.remove_rod()
 			
 			ANIMATOR.play('destroy')
+			_break.play()
 			
 			state = STATES.DISABLED
 				

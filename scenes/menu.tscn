@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dbvr4gtvlla6o"]
+[gd_scene load_steps=14 format=3 uid="uid://dbvr4gtvlla6o"]
 
 [ext_resource type="Script" path="res://scenes/scripts/menu.gd" id="1_ykjgp"]
 [ext_resource type="PackedScene" uid="uid://b7ll12xiwgikm" path="res://scenes/rod.tscn" id="2_juttn"]
@@ -8,6 +8,7 @@
 [ext_resource type="LabelSettings" uid="uid://bgtw0y573jfre" path="res://assets/label.tres" id="5_rdb0o"]
 [ext_resource type="Texture2D" uid="uid://cy6iowk7edyt2" path="res://assets/FullAssets/bottom.svg" id="5_svyyx"]
 [ext_resource type="FontFile" uid="uid://3wo0eceucdpw" path="res://assets/Mythoz.ttf" id="6_qgb85"]
+[ext_resource type="AudioStream" uid="uid://qbgc6u16fqit" path="res://assets/Audio/wrench-02-101112.mp3" id="9_04ff3"]
 
 [sub_resource type="Animation" id="Animation_honsq"]
 length = 0.001
@@ -235,11 +236,18 @@ flat = true
 alignment = 0
 clip_text = true
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="VBoxContainer/HBoxContainer/Buttons"]
+stream = ExtResource("9_04ff3")
+volume_db = 3.0
+
 [node name="SpacerB" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 4.0
 
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/Buttons/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Buttons/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/Buttons/Options" to="." method="_on_options_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Buttons/Options" to="." method="_on_options_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/Buttons/Exit" to="." method="_on_exit_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Buttons/Exit" to="." method="_on_exit_pressed"]

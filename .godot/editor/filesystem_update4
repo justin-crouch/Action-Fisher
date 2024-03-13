@@ -14,3 +14,6 @@ res://scenes/ui.tscn
 res://scenes/scripts/ui.gd
 res://scenes/scripts/boat.gd
 res://scenes/scripts/score.gd
+res://scenes/background_music.tscn
+res://scenes/player.tscn
+res://scenes/scripts/player.gd

@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Score="*res://scenes/scripts/score.gd"
+BackgroundMusic="*res://scenes/background_music.tscn"
 
 [display]
 

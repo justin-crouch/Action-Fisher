@@ -1,8 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://b7ll12xiwgikm"]
+[gd_scene load_steps=18 format=3 uid="uid://b7ll12xiwgikm"]
 
 [ext_resource type="Script" path="res://scenes/scripts/rod.gd" id="1_otodr"]
 [ext_resource type="FontFile" uid="uid://3wo0eceucdpw" path="res://assets/Mythoz.ttf" id="2_2t25c"]
 [ext_resource type="Texture2D" uid="uid://dqb0jlkikxmyh" path="res://assets/FullAssets/rod.svg" id="2_yrqki"]
+[ext_resource type="AudioStream" uid="uid://b1egbepompvqm" path="res://assets/Audio/reel.wav" id="4_0fa5n"]
+[ext_resource type="AudioStream" uid="uid://b6wb6om6mfa2u" path="res://assets/Audio/kick.mp3" id="5_05utq"]
+[ext_resource type="AudioStream" uid="uid://b57b613e6pgf8" path="res://assets/Audio/snap.wav" id="6_7irq8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pyrj"]
 bg_color = Color(1, 0.133333, 0.219608, 0.85098)
@@ -505,6 +508,20 @@ remote_path = NodePath("../../CollisionShape2D")
 libraries = {
 "": SubResource("AnimationLibrary_ywgsx")
 }
+
+[node name="Catch" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_0fa5n")
+volume_db = -10.0
+pitch_scale = 2.14
+
+[node name="Fix" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_05utq")
+pitch_scale = 2.0
+
+[node name="Break" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_7irq8")
+volume_db = -10.0
+pitch_scale = 1.03
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
