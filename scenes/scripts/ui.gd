@@ -1,12 +1,23 @@
 extends Control
 
+@onready var health_time = $HealthTime
 @onready var healthbar = $HealthTime/Healthbar
 @onready var health_animation = $HealthTime/Healthbar/AnimationPlayer
-@onready var time = $HealthTime/Time
+@onready var time = $HealthTime/HBoxContainer/Time
+
+@onready var rod_1 = $HealthTime/HBoxContainer/Rods/Rod1
+@onready var rod_2 = $HealthTime/HBoxContainer/Rods/Rod2
+@onready var rod_3 = $HealthTime/HBoxContainer/Rods/Rod3
+@onready var rod_4 = $HealthTime/HBoxContainer/Rods/Rod4
+
 
 @onready var game_over = $GameOver
 @onready var over_animation = $GameOver/AnimationPlayer
 @onready var audio_stream_player_2d = $AudioStreamPlayer2D
+
+@onready var game_over_cutscene = $"../../GameOverCutscene"
+@onready var player = $"../../Player"
+@onready var tentacles = $"../../Tentacles"
 
 @onready var PAUSE = $Pause
 @export_node_path("Node2D") var BOAT_PATH
@@ -22,9 +33,16 @@ func _ready():
 	Boat.end_game.connect(_on_end_game)
 	Boat.tick.connect(_on_tick)
 	Score.on_pause.connect(_on_paused)
+	
 
 func _on_tick(delta, game_time):
 	time.text = Score.display_score()
+	
+	match(Boat.rods):
+		3: rod_4.visible = false
+		2: rod_3.visible = false
+		1: rod_2.visible = false
+		0: rod_1.visible = false
 
 func _on_health_changed(new_health):
 	healthbar.value = Boat.get_health()
@@ -35,10 +53,21 @@ func _on_paused(paused):
 	else: PAUSE.visible = false
 
 func _on_end_game():
+	
+	health_time.visible = false
 	PAUSE.visible = false
 	game_over.visible = true
-	
 	get_node("GameOver/VBox2/ScoreDisplay/Time").text = Score.display_score()
+	
+	player.visible = false
+	tentacles.visible = false
+	
+	game_over_cutscene.global_position = player.global_position
+	game_over_cutscene.apply_scale( Vector2(player.dir, 1) )
+	game_over_cutscene.visible = true
+	game_over_cutscene.get_node('AnimationPlayer').play('squeeze')
+	await game_over_cutscene.get_node('AnimationPlayer').animation_finished
+	
 	over_animation.play("end_game")
 
 func _on_resume_pressed():

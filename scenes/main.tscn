@@ -1,16 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://2vgou50xdtjk"]
+[gd_scene load_steps=8 format=3 uid="uid://2vgou50xdtjk"]
 
 [ext_resource type="PackedScene" uid="uid://iymn8t07gpl6" path="res://scenes/player.tscn" id="1_ach4x"]
 [ext_resource type="PackedScene" uid="uid://b7ll12xiwgikm" path="res://scenes/rod.tscn" id="2_jg3on"]
 [ext_resource type="PackedScene" uid="uid://dcsevfmhhkf1g" path="res://scenes/tentacle.tscn" id="3_tapio"]
 [ext_resource type="PackedScene" uid="uid://ci7kwoh1tw8va" path="res://scenes/ui.tscn" id="5_0g0vr"]
 [ext_resource type="PackedScene" uid="uid://cfy63be300nlf" path="res://scenes/boat.tscn" id="5_uqgrn"]
+[ext_resource type="PackedScene" uid="uid://c8k4tensqa0m7" path="res://scenes/game_over_cutscene.tscn" id="6_8cxtg"]
+[ext_resource type="Texture2D" uid="uid://p4tol2phjndc" path="res://assets/FullAssets/day sky.png" id="7_flsr0"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ach4x")]
 z_as_relative = false
-position = Vector2(691, 550)
+position = Vector2(968, 550)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2(0, -100)
@@ -112,3 +114,13 @@ metadata/_edit_lock_ = true
 
 [node name="UI" parent="CanvasLayer" instance=ExtResource("5_0g0vr")]
 BOAT_PATH = NodePath("../../Boat")
+
+[node name="GameOverCutscene" parent="." instance=ExtResource("6_8cxtg")]
+visible = false
+position = Vector2(922, 1489)
+
+[node name="DaySky" type="Sprite2D" parent="."]
+modulate = Color(0.72549, 0.764706, 0.588235, 1)
+z_index = -5
+position = Vector2(800, 0)
+texture = ExtResource("7_flsr0")

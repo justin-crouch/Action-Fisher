@@ -17,7 +17,7 @@ var ten_array
 var TEN_STATES
 var tentacle_counter: int = 0
 
-var spawn = 0
+var spawn = 15
 
 enum {
 	PLAY,
@@ -26,6 +26,7 @@ enum {
 var state = PLAY
 
 func _ready():
+	Score.reset_fish()
 	ten_array = get_node(TENTACLES).get_children()
 	TEN_STATES = ten_array[0].STATES
 	Score.resume()

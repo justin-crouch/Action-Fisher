@@ -33,3 +33,9 @@ func resume():
 func end_game():
 	on_pause.emit(true)
 	paused = true
+
+
+var fish: int = 0
+func add_fish(): fish += 1
+func get_fish(): return fish
+func reset_fish(): fish = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b7ll12xiwgikm"]
+[gd_scene load_steps=20 format=3 uid="uid://b7ll12xiwgikm"]
 
 [ext_resource type="Script" path="res://scenes/scripts/rod.gd" id="1_otodr"]
 [ext_resource type="FontFile" uid="uid://3wo0eceucdpw" path="res://assets/Mythoz.ttf" id="2_2t25c"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://b1egbepompvqm" path="res://assets/Audio/reel.wav" id="4_0fa5n"]
 [ext_resource type="AudioStream" uid="uid://b6wb6om6mfa2u" path="res://assets/Audio/kick.mp3" id="5_05utq"]
 [ext_resource type="AudioStream" uid="uid://b57b613e6pgf8" path="res://assets/Audio/snap.wav" id="6_7irq8"]
+[ext_resource type="Texture2D" uid="uid://c7osi4t2m5wgd" path="res://assets/FullAssets/fish1.svg" id="7_ehlso"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pyrj"]
 bg_color = Color(1, 0.133333, 0.219608, 0.85098)
@@ -97,6 +98,54 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.67405]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SkeleSprites/Fish1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(85, 229)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SkeleSprites/Fish1:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.677623]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SkeleSprites/Fish1:z_index")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Fishingline/Line2D:points")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [PackedVector2Array(0, 0, 0, 1000)]
 }
 
 [sub_resource type="Animation" id="Animation_if5e7"]
@@ -257,12 +306,113 @@ tracks/3/keys = {
 "values": [0.67405, 0.68633, 0.695358, 0.701634, 0.705658, 0.70793, 0.708952, 0.709223, 0.709244, 0.709515, 0.710536, 0.712809, 0.716833, 0.723109, 0.732137, 0.744417, 0.67405]
 }
 
+[sub_resource type="Animation" id="Animation_swb1x"]
+resource_name = "reel_in"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SkeleSprites/Fish1:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(85, 229), Vector2(58, -70.037), Vector2(-59, -199), Vector2(-176, -14)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SkeleSprites/Fish1:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-1.5708, -1.57267, -2.37631, -3.57231]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SkeleSprites/Fish1:z_index")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [5, 3]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SkeleSprites/Skeleton2D/Base_1:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.346922, 0.111485, 0.0990605]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SkeleSprites/Skeleton2D/Base_1/1_2:rotation")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.722612, 0.150847, 0.342226]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SkeleSprites/Skeleton2D/Base_1/1_2/2_3:rotation")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.797118, 0.0424472, 0.341244]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SkeleSprites/Skeleton2D/Base_1/1_2/2_3/3_4:rotation")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.00243, 0.237881, 0.383414]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Fishingline/Line2D:points")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.15, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [PackedVector2Array(0, 0, 10, 270), PackedVector2Array(0, 0, 15, 220), PackedVector2Array(0, 0, 50, 170), PackedVector2Array(0, 0, 75, 50), PackedVector2Array(0, 0, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ywgsx"]
 _data = {
 "RESET": SubResource("Animation_4mppw"),
 "catch": SubResource("Animation_if5e7"),
 "destroy": SubResource("Animation_o173f"),
-"idle": SubResource("Animation_vj0hg")
+"idle": SubResource("Animation_vj0hg"),
+"reel_in": SubResource("Animation_swb1x")
 }
 
 [node name="Rod" type="Area2D" groups=["Interactable"]]
@@ -318,45 +468,46 @@ z_as_relative = false
 
 [node name="Line2D" type="Line2D" parent="Fishingline"]
 position = Vector2(90, -131)
+rotation = 0.00339997
 points = PackedVector2Array(0, 0, 0, 1000)
 width = 2.0
 default_color = Color(1, 1, 1, 0.698039)
 
 [node name="Line2D2" type="Line2D" parent="Fishingline"]
-position = Vector2(62, -135)
-rotation = -1.41986
-scale = Vector2(0.999456, 0.999456)
+position = Vector2(62.0003, -135)
+rotation = -1.41987
+scale = Vector2(0.999444, 0.999444)
 points = PackedVector2Array(0, 0, 0, 28)
 width = 2.0
 default_color = Color(1, 1, 1, 0.698039)
 
 [node name="Line2D3" type="Line2D" parent="Fishingline"]
-position = Vector2(33, -120)
-rotation = -2.05261
-scale = Vector2(0.999553, 0.999553)
+position = Vector2(33.0001, -120)
+rotation = -2.0526
+scale = Vector2(0.999558, 0.999558)
 points = PackedVector2Array(0, 0, 0, 32)
 width = 2.0
 default_color = Color(1, 1, 1, 0.698039)
 
 [node name="Line2D4" type="Line2D" parent="Fishingline"]
-position = Vector2(16, -94)
+position = Vector2(16.0001, -94.0001)
 rotation = -2.57078
-scale = Vector2(0.99971, 0.99971)
+scale = Vector2(0.999714, 0.999714)
 points = PackedVector2Array(0, 0, 0, 30)
 width = 2.0
 default_color = Color(1, 1, 1, 0.698039)
 
 [node name="Line2D5" type="Line2D" parent="Fishingline"]
-position = Vector2(8, -67)
-rotation = -2.8495
-scale = Vector2(0.999844, 0.999844)
+position = Vector2(8.00003, -67)
+rotation = -2.84462
+scale = Vector2(0.999848, 0.999848)
 points = PackedVector2Array(0, 0, 0, 28)
 width = 2.0
 default_color = Color(1, 1, 1, 0.698039)
 
 [node name="Line2D6" type="Line2D" parent="Fishingline"]
 position = Vector2(9, -49)
-rotation = 3.10408
+rotation = 3.10409
 scale = Vector2(1, 1)
 points = PackedVector2Array(0, 0, 0, 18)
 width = 2.0
@@ -384,7 +535,7 @@ z_index = 5
 z_as_relative = false
 position = Vector2(1, -70)
 rotation = 0.243944
-scale = Vector2(0.999844, 0.999844)
+scale = Vector2(0.999848, 0.999848)
 texture = ExtResource("2_yrqki")
 offset = Vector2(3, -16)
 region_enabled = true
@@ -392,13 +543,13 @@ region_rect = Rect2(0, 104, 16, 32)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="SkeleSprites/RodSprites/Base/P1"]
 position = Vector2(7.51852, 1.22065)
-rotation = -3.09345
+rotation = -3.08856
 remote_path = NodePath("../../../../../Fishingline/Line2D5")
 
 [node name="P2" type="Sprite2D" parent="SkeleSprites/RodSprites/Base/P1"]
 z_index = 5
 z_as_relative = false
-position = Vector2(-9.53674e-07, -32)
+position = Vector2(9.53674e-07, -32)
 rotation = 0.402082
 scale = Vector2(0.999866, 0.999866)
 texture = ExtResource("2_yrqki")
@@ -414,9 +565,9 @@ remote_path = NodePath("../../../../../../Fishingline/Line2D4")
 [node name="P3" type="Sprite2D" parent="SkeleSprites/RodSprites/Base/P1/P2"]
 z_index = 5
 z_as_relative = false
-position = Vector2(3.8147e-06, -32)
+position = Vector2(-7.62939e-06, -32)
 rotation = 0.458057
-scale = Vector2(0.999843, 0.999843)
+scale = Vector2(0.999844, 0.999844)
 texture = ExtResource("2_yrqki")
 offset = Vector2(3, -20)
 region_enabled = true
@@ -430,9 +581,9 @@ remote_path = NodePath("../../../../../../../Fishingline/Line2D3")
 [node name="P4" type="Sprite2D" parent="SkeleSprites/RodSprites/Base/P1/P2/P3"]
 z_index = 5
 z_as_relative = false
-position = Vector2(-7.62939e-06, -40)
+position = Vector2(7.62939e-06, -40)
 rotation = 0.67405
-scale = Vector2(0.999903, 0.999903)
+scale = Vector2(0.999886, 0.999886)
 texture = ExtResource("2_yrqki")
 offset = Vector2(3, -16)
 region_enabled = true
@@ -452,7 +603,6 @@ rotation = -3.198
 remote_path = NodePath("../../../../../../../../Fishingline/Line2D2")
 
 [node name="Skeleton2D" type="Skeleton2D" parent="SkeleSprites"]
-visible = false
 modulate = Color(1, 1, 1, 0.243137)
 position = Vector2(0, 1)
 modification_stack = SubResource("SkeletonModificationStack2D_ds57y")
@@ -460,7 +610,7 @@ modification_stack = SubResource("SkeletonModificationStack2D_ds57y")
 [node name="Base_1" type="Bone2D" parent="SkeleSprites/Skeleton2D"]
 position = Vector2(1, -71)
 rotation = 0.243944
-scale = Vector2(0.999844, 0.999844)
+scale = Vector2(0.999848, 0.999848)
 rest = Transform2D(1, 0, 0, 1, 0, -71)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="SkeleSprites/Skeleton2D/Base_1"]
@@ -478,7 +628,7 @@ remote_path = NodePath("../../../../RodSprites/Base/P1/P2")
 [node name="2_3" type="Bone2D" parent="SkeleSprites/Skeleton2D/Base_1/1_2"]
 position = Vector2(0, -32)
 rotation = 0.458057
-scale = Vector2(0.999843, 0.999843)
+scale = Vector2(0.999844, 0.999844)
 rest = Transform2D(1, 0, 0, 1, 0, -32)
 
 [node name="RemoteTransform2D3" type="RemoteTransform2D" parent="SkeleSprites/Skeleton2D/Base_1/1_2/2_3"]
@@ -487,7 +637,7 @@ remote_path = NodePath("../../../../../RodSprites/Base/P1/P2/P3")
 [node name="3_4" type="Bone2D" parent="SkeleSprites/Skeleton2D/Base_1/1_2/2_3"]
 position = Vector2(0, -40)
 rotation = 0.67405
-scale = Vector2(0.999903, 0.999903)
+scale = Vector2(0.999886, 0.999886)
 rest = Transform2D(1, 0, 0, 1, 0, -40)
 
 [node name="RemoteTransform2D4" type="RemoteTransform2D" parent="SkeleSprites/Skeleton2D/Base_1/1_2/2_3/3_4"]
@@ -509,6 +659,14 @@ position = Vector2(31, 4)
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="SkeleSprites"]
 position = Vector2(-25, -143)
 remote_path = NodePath("../../CollisionShape2D")
+
+[node name="Fish1" type="Sprite2D" parent="SkeleSprites"]
+z_index = 5
+z_as_relative = false
+position = Vector2(85, 229)
+rotation = 0.677623
+scale = Vector2(0.168516, 0.168516)
+texture = ExtResource("7_ehlso")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

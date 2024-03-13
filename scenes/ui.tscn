@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://ci7kwoh1tw8va"]
+[gd_scene load_steps=16 format=3 uid="uid://ci7kwoh1tw8va"]
 
 [ext_resource type="Script" path="res://scenes/scripts/ui.gd" id="1_3gm7u"]
 [ext_resource type="AudioStream" uid="uid://qbgc6u16fqit" path="res://assets/Audio/wrench-02-101112.mp3" id="2_5xtr3"]
 [ext_resource type="FontFile" uid="uid://3wo0eceucdpw" path="res://assets/Mythoz.ttf" id="2_iobp8"]
+[ext_resource type="Texture2D" uid="uid://dse501cjdpcby" path="res://assets/FullAssets/rod_icon.svg" id="4_7qj3p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1vl8"]
 bg_color = Color(0, 0, 0, 0)
@@ -28,6 +29,21 @@ corner_radius_bottom_right = 8
 expand_margin_left = 50.0
 expand_margin_right = 25.0
 
+[sub_resource type="Animation" id="Animation_ne7gq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_styles/normal:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.607843, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_a7ogx"]
 resource_name = "hurt"
 length = 0.3
@@ -43,21 +59,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 0.607843, 0, 0), Color(1, 0.607843, 0, 1), Color(1, 0.608, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_ne7gq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:theme_override_styles/normal:bg_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 0.607843, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3uvbr"]
@@ -93,33 +94,6 @@ content_margin_right = 40.0
 content_margin_bottom = 40.0
 bg_color = Color(0, 0, 0, 0)
 
-[sub_resource type="Animation" id="Animation_efbx3"]
-resource_name = "end_game"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:theme_override_styles/panel:bg_color")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("VBox2:modulate")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_ar7rx"]
 length = 0.001
 tracks/0/type = "value"
@@ -147,6 +121,33 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_efbx3"]
+resource_name = "end_game"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_styles/panel:bg_color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBox2:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_omv5w"]
 _data = {
 "RESET": SubResource("Animation_ar7rx"),
@@ -170,7 +171,7 @@ volume_db = 3.0
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 90.0
+offset_bottom = 126.0
 grow_horizontal = 2
 
 [node name="Healthbar" type="ProgressBar" parent="HealthTime"]
@@ -212,15 +213,70 @@ modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="Time" type="Label" parent="HealthTime"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HealthTime"]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 3
+
+[node name="VSeparator2" type="VSeparator" parent="HealthTime/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Rods" type="GridContainer" parent="HealthTime/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+columns = 4
+
+[node name="Rod1" type="TextureRect" parent="HealthTime/HBoxContainer/Rods"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("4_7qj3p")
+expand_mode = 2
+
+[node name="Rod2" type="TextureRect" parent="HealthTime/HBoxContainer/Rods"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("4_7qj3p")
+expand_mode = 2
+
+[node name="Rod3" type="TextureRect" parent="HealthTime/HBoxContainer/Rods"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("4_7qj3p")
+expand_mode = 2
+
+[node name="Rod4" type="TextureRect" parent="HealthTime/HBoxContainer/Rods"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("4_7qj3p")
+expand_mode = 2
+
+[node name="VSeparator3" type="VSeparator" parent="HealthTime/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Time" type="Label" parent="HealthTime/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_iobp8")
 theme_override_font_sizes/font_size = 24
 text = "00:00"
+
+[node name="VSeparator4" type="VSeparator" parent="HealthTime/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+size_flags_stretch_ratio = 4.0
 
 [node name="Pause" type="PanelContainer" parent="."]
 visible = false

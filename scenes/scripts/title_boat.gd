@@ -6,7 +6,7 @@ extends Node2D
 @onready var rod_4 = $Rod4
 
 var timer: float = 3.0
-var last_catch: int
+var block = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,27 +25,46 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(timer <= 0):
+	if(timer <= 0 && !block):
+		block = true
+		
 		var rdm = randf()
 		if(rdm <= .25): 
 			rod.get_node("AnimationPlayer").play('catch')
-			get_tree().create_timer( randf_range(3.0, 7.0) ).timeout.connect( func(): reset_rod(1) )
+			await get_tree().create_timer( randf_range(3.0, 7.0) ).timeout
+			rod.get_node("AnimationPlayer").play('reel_in')
+			get_tree().create_timer( 1.0 ).timeout.connect( func(): reset_rod(1) )
 		elif(rdm <= .50): 
 			rod_2.get_node("AnimationPlayer").play('catch')
-			get_tree().create_timer( randf_range(3.0, 7.0) ).timeout.connect( func(): reset_rod(2) )
+			await get_tree().create_timer( randf_range(3.0, 7.0) ).timeout
+			rod_2.get_node("AnimationPlayer").play('reel_in')
+			get_tree().create_timer( 1.0 ).timeout.connect( func(): reset_rod(2) )
 		elif(rdm <= .75): 
 			rod_3.get_node("AnimationPlayer").play('catch')
-			get_tree().create_timer( randf_range(3.0, 7.0) ).timeout.connect( func(): reset_rod(3) )
+			await get_tree().create_timer( randf_range(3.0, 7.0) ).timeout
+			rod_3.get_node("AnimationPlayer").play('reel_in')
+			get_tree().create_timer( 1.0 ).timeout.connect( func(): reset_rod(3) )
 		elif(rdm <= 1.0): 
 			rod_4.get_node("AnimationPlayer").play('catch')
-			get_tree().create_timer( randf_range(3.0, 7.0) ).timeout.connect( func(): reset_rod(4) )
+			await get_tree().create_timer( randf_range(3.0, 7.0) ).timeout
+			rod_4.get_node("AnimationPlayer").play('reel_in')
+			get_tree().create_timer( 1.0 ).timeout.connect( func(): reset_rod(4) )
 		
 		timer = randf_range(3.0, 7.0)
+		block = false
 		
 	timer -= delta
 			
 func reset_rod(rodn: int):
-	if(rodn == 1): rod.get_node("AnimationPlayer").play('idle')
-	elif(rodn == 2): rod_2.get_node("AnimationPlayer").play('idle')
-	elif(rodn == 3): rod_3.get_node("AnimationPlayer").play('idle')
-	elif(rodn == 4): rod_4.get_node("AnimationPlayer").play('idle')
+	if(rodn == 1): 
+		rod.get_node("AnimationPlayer").play('RESET')
+		rod.get_node("AnimationPlayer").queue('idle')
+	elif(rodn == 2): 
+		rod_2.get_node("AnimationPlayer").play('RESET')
+		rod_2.get_node("AnimationPlayer").queue('idle')
+	elif(rodn == 3): 
+		rod_3.get_node("AnimationPlayer").play('RESET')
+		rod_3.get_node("AnimationPlayer").queue('idle')
+	elif(rodn == 4): 
+		rod_4.get_node("AnimationPlayer").play('RESET')
+		rod_4.get_node("AnimationPlayer").queue('idle')

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dbvr4gtvlla6o"]
+[gd_scene load_steps=16 format=3 uid="uid://dbvr4gtvlla6o"]
 
 [ext_resource type="Script" path="res://scenes/scripts/menu.gd" id="1_ykjgp"]
 [ext_resource type="PackedScene" uid="uid://b7ll12xiwgikm" path="res://scenes/rod.tscn" id="2_juttn"]
@@ -9,6 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://cy6iowk7edyt2" path="res://assets/FullAssets/bottom.svg" id="5_svyyx"]
 [ext_resource type="FontFile" uid="uid://3wo0eceucdpw" path="res://assets/Mythoz.ttf" id="6_qgb85"]
 [ext_resource type="AudioStream" uid="uid://qbgc6u16fqit" path="res://assets/Audio/wrench-02-101112.mp3" id="9_04ff3"]
+[ext_resource type="Texture2D" uid="uid://p4tol2phjndc" path="res://assets/FullAssets/day sky.png" id="10_1h1hl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5afi"]
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_honsq"]
 length = 0.001
@@ -89,7 +93,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(937, 585), Vector2(770, 570)]
+"values": [Vector2(937, 585), Vector2(414, 572)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rcgoh"]
@@ -113,6 +117,13 @@ position = Vector2(937, 585)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("2_punem")
 
+[node name="Panel" type="Panel" parent="Boat"]
+offset_left = 22.0
+offset_top = -338.0
+offset_right = 504.0
+offset_bottom = -200.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_y5afi")
+
 [node name="Back" type="Sprite2D" parent="Boat"]
 position = Vector2(262.865, -178.665)
 texture = ExtResource("3_elyqi")
@@ -127,12 +138,12 @@ scale = Vector2(1.2, 1.2)
 script = null
 
 [node name="Rod2" parent="Boat" instance=ExtResource("2_juttn")]
-position = Vector2(-558, -108.75)
+position = Vector2(-508, -108.75)
 scale = Vector2(1.2, 1.2)
 script = null
 
 [node name="Rod3" parent="Boat" instance=ExtResource("2_juttn")]
-position = Vector2(550, -27.5001)
+position = Vector2(490, -27.5)
 scale = Vector2(1.2, 1.2)
 script = null
 
@@ -244,6 +255,12 @@ volume_db = 3.0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 4.0
+
+[node name="DaySky" type="Sprite2D" parent="."]
+modulate = Color(0.72549, 0.764706, 0.588235, 1)
+z_index = -5
+position = Vector2(500, 0)
+texture = ExtResource("10_1h1hl")
 
 [connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/Buttons/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Buttons/Play" to="." method="_on_play_pressed"]

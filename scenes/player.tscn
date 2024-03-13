@@ -1280,8 +1280,8 @@ position = Vector2(-9, -81)
 metadata/_edit_group_ = true
 
 [node name="BForearm" type="Sprite2D" parent="PartsSkeleton/Parts"]
-position = Vector2(-3.78638, -0.917343)
-rotation = 1.57321
+position = Vector2(-8.47517, -7.28551)
+rotation = 0.585756
 scale = Vector2(0.999522, 0.999522)
 texture = ExtResource("6_g1fr2")
 offset = Vector2(-4, 15)
@@ -1289,7 +1289,8 @@ region_enabled = true
 region_rect = Rect2(216, 168, 16, 40)
 
 [node name="BBicep" type="Sprite2D" parent="PartsSkeleton/Parts"]
-position = Vector2(-4.32027, -32.9627)
+position = Vector2(-13.7977, -38.8902)
+rotation = -0.150184
 scale = Vector2(0.999652, 0.999652)
 texture = ExtResource("6_g1fr2")
 offset = Vector2(-2, 13)
@@ -1297,8 +1298,8 @@ region_enabled = true
 region_rect = Rect2(192, 160, 24, 48)
 
 [node name="Hand" type="Sprite2D" parent="PartsSkeleton/Parts"]
-position = Vector2(-32.7725, -2.91639)
-rotation = 1.57081
+position = Vector2(-26.1097, 15.806)
+rotation = -2.34518
 scale = Vector2(0.999522, 0.999522)
 texture = ExtResource("6_g1fr2")
 offset = Vector2(-0.215731, -4.40458)
@@ -1306,8 +1307,8 @@ region_enabled = true
 region_rect = Rect2(192, 208, 16, 24)
 
 [node name="BFoot" type="Sprite2D" parent="PartsSkeleton/Parts"]
-position = Vector2(-10.9946, 58.9892)
-rotation = -0.0948354
+position = Vector2(-22.1098, 49.6912)
+rotation = -0.438745
 scale = Vector2(0.999529, 0.999529)
 texture = ExtResource("6_g1fr2")
 offset = Vector2(6, 14)
@@ -1315,7 +1316,8 @@ region_enabled = true
 region_rect = Rect2(128, 304, 24, 48)
 
 [node name="BLeg" type="Sprite2D" parent="PartsSkeleton/Parts"]
-position = Vector2(-1.99752, 23.0011)
+position = Vector2(-5.54812, 16.4978)
+rotation = 0.217825
 scale = Vector2(0.99967, 0.99967)
 texture = ExtResource("6_g1fr2")
 offset = Vector2(-3.87781, 16.2054)
@@ -1323,7 +1325,8 @@ region_enabled = true
 region_rect = Rect2(120, 248, 32, 56)
 
 [node name="Torso" type="Sprite2D" parent="PartsSkeleton/Parts"]
-position = Vector2(12, 29)
+position = Vector2(9, 21)
+rotation = -0.104768
 scale = Vector2(0.999823, 0.999823)
 texture = ExtResource("6_g1fr2")
 offset = Vector2(0, -36)
@@ -1331,7 +1334,8 @@ region_enabled = true
 region_rect = Rect2(104, 160, 56, 88)
 
 [node name="Face" type="Sprite2D" parent="PartsSkeleton/Parts"]
-position = Vector2(13.9996, -32.989)
+position = Vector2(4.50606, -40.8582)
+rotation = 0.00636029
 scale = Vector2(0.999647, 0.999647)
 texture = ExtResource("6_g1fr2")
 offset = Vector2(0, -26)
@@ -1339,8 +1343,8 @@ region_enabled = true
 region_rect = Rect2(96, 88, 72, 64)
 
 [node name="Hat" type="Sprite2D" parent="PartsSkeleton/Parts"]
-position = Vector2(9.00141, -78.9728)
-rotation = 1.49419
+position = Vector2(-0.199604, -86.8729)
+rotation = 0.00808026
 scale = Vector2(0.999647, 0.999647)
 texture = ExtResource("6_g1fr2")
 offset = Vector2(0, -18)
@@ -1348,8 +1352,8 @@ region_enabled = true
 region_rect = Rect2(72, 24, 104, 56)
 
 [node name="FFoot" type="Sprite2D" parent="PartsSkeleton/Parts"]
-position = Vector2(14.0009, 61.9884)
-rotation = 0.911739
+position = Vector2(7.23329, 52.0314)
+rotation = -0.526868
 scale = Vector2(0.999492, 0.999492)
 texture = ExtResource("6_g1fr2")
 offset = Vector2(6, 13)
@@ -1357,7 +1361,8 @@ region_enabled = true
 region_rect = Rect2(128, 304, 24, 48)
 
 [node name="FLeg" type="Sprite2D" parent="PartsSkeleton/Parts"]
-position = Vector2(21.9982, 26.0005)
+position = Vector2(18.6297, 16.9714)
+rotation = 0.0956132
 scale = Vector2(0.999662, 0.999662)
 texture = ExtResource("6_g1fr2")
 offset = Vector2(-2, 17)
@@ -1365,7 +1370,8 @@ region_enabled = true
 region_rect = Rect2(120, 248, 32, 56)
 
 [node name="FForearm" type="Sprite2D" parent="PartsSkeleton/Parts"]
-position = Vector2(35.2527, 0.572113)
+position = Vector2(41.7621, -15.9552)
+rotation = -0.0203503
 scale = Vector2(0.999546, 0.999546)
 texture = ExtResource("6_g1fr2")
 offset = Vector2(-3.89942, 15.1278)
@@ -1373,7 +1379,8 @@ region_enabled = true
 region_rect = Rect2(216, 168, 16, 40)
 
 [node name="FBicep" type="Sprite2D" parent="PartsSkeleton/Parts"]
-position = Vector2(31.254, -30.4178)
+position = Vector2(21.9347, -40.1055)
+rotation = -0.559093
 scale = Vector2(0.999674, 0.999674)
 texture = ExtResource("6_g1fr2")
 offset = Vector2(1, 15)
@@ -1381,8 +1388,8 @@ region_enabled = true
 region_rect = Rect2(192, 160, 24, 48)
 
 [node name="Hook" type="Sprite2D" parent="PartsSkeleton/Parts"]
-position = Vector2(33.7944, 32.54)
-rotation = -1.57079
+position = Vector2(40.9546, 16.0357)
+rotation = -0.13913
 scale = Vector2(0.999533, 0.999533)
 texture = ExtResource("6_g1fr2")
 offset = Vector2(-2, 8)
@@ -1545,6 +1552,7 @@ remote_path = NodePath("../../CollisionShape2D")
 libraries = {
 "": SubResource("AnimationLibrary_73xib")
 }
+autoplay = "idle"
 
 [node name="Swing" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_5kv2k")

@@ -928,6 +928,7 @@ scale = Vector2(0.7, 1)
 script = ExtResource("1_4y8wy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-9.28571, -357.5)
 scale = Vector2(1, 3)
 shape = SubResource("RectangleShape2D_ryws6")
@@ -1002,7 +1003,7 @@ modulate = Color(0.996078, 0.462745, 0.396078, 1)
 position = Vector2(122.545, -428.96)
 rotation = -1.60588
 scale = Vector2(0.714496, 0.999839)
-skew = 0.0171794
+skew = 0.0171793
 texture = ExtResource("2_lw4ek")
 offset = Vector2(35.7143, -23.8)
 region_enabled = true
@@ -1010,7 +1011,7 @@ region_rect = Rect2(592, 0, 72, 56)
 
 [node name="Tip4" type="Sprite2D" parent="SkeleParts/Parts"]
 modulate = Color(0.996078, 0.462745, 0.396078, 1)
-position = Vector2(138.317, -379.16)
+position = Vector2(138.318, -379.16)
 rotation = -1.82473
 scale = Vector2(0.725583, 0.991824)
 skew = 0.122283
@@ -1023,7 +1024,7 @@ region_rect = Rect2(512, 0, 72, 56)
 modulate = Color(0.996078, 0.462745, 0.396078, 1)
 position = Vector2(105.385, -268.428)
 rotation = -1.10201
-scale = Vector2(0.752913, 0.971246)
+scale = Vector2(0.752913, 0.971245)
 skew = -0.215929
 texture = ExtResource("2_lw4ek")
 offset = Vector2(40, -26.6)
@@ -1033,7 +1034,7 @@ region_rect = Rect2(432, 0, 80, 56)
 [node name="Mid3" type="Sprite2D" parent="SkeleParts/Parts"]
 modulate = Color(0.996078, 0.462745, 0.396078, 1)
 position = Vector2(61.9804, -220.427)
-rotation = -0.835635
+rotation = -0.835634
 scale = Vector2(0.80894, 0.925101)
 skew = -0.302905
 texture = ExtResource("2_lw4ek")
@@ -1046,7 +1047,7 @@ modulate = Color(0.996078, 0.462745, 0.396078, 1)
 position = Vector2(132.599, -322.163)
 rotation = -1.4708
 scale = Vector2(0.716033, 0.998745)
-skew = -0.0488532
+skew = -0.0488533
 texture = ExtResource("2_lw4ek")
 offset = Vector2(40, -26.6)
 region_enabled = true

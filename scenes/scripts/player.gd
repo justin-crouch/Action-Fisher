@@ -22,6 +22,7 @@ enum STATES {
 var state: STATES = STATES.IDLE
 var last_state: STATES = state
 var nearby = false
+var dir = 1
 
 func _ready():
 	Score.on_pause.connect(_on_pause)
@@ -46,6 +47,7 @@ func _physics_process(delta):
 			if(direction):
 				if(direction == -1 || direction == 1): parts_skeleton.scale = Vector2(-direction, 1)
 				
+				dir = -direction
 				ANIMATOR.play("walk")
 				velocity.x = direction * SPEED
 				

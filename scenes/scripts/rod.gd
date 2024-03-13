@@ -89,8 +89,15 @@ func _on_tick(delta, game_time):
 			else: 		interact.visible = false
 			
 			if(nearby && Input.is_action_just_pressed("INTERACT")): 
-				await get_tree().create_timer(.3).timeout
+				state = STATES.DISABLED
+				
+				await get_tree().create_timer(0.3).timeout
+				Score.add_fish()
+				ANIMATOR.play("reel_in")
 				fix.play()
+				await get_tree().create_timer(1).timeout
+				
+				ANIMATOR.play("RESET")
 				state = STATES.WAIT
 		
 		STATES.DISABLE:
@@ -108,9 +115,20 @@ func _on_tick(delta, game_time):
 			pass
 			
 
+var status_interact
+var status_progress
 func _on_pause(paused):
-	if(paused): ANIMATOR.pause()
-	else: ANIMATOR.play()
+	if(paused):
+		ANIMATOR.pause()
+		
+		status_interact = interact.visible
+		status_progress = progress_bar.visible
+		interact.visible = false
+		progress_bar.visible = false
+	else:
+		ANIMATOR.play()
+		interact.visible = status_interact
+		progress_bar.visible = status_progress
 
 
 func _on_body_entered(body):
