@@ -142,7 +142,7 @@ scale = Vector2(1.2, 1.2)
 script = null
 
 [node name="Bottom" type="Sprite2D" parent="Boat"]
-z_index = 12
+z_index = 4
 position = Vector2(-10.1351, 25.3348)
 texture = ExtResource("5_svyyx")
 

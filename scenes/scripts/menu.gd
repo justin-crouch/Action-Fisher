@@ -3,7 +3,7 @@ extends Control
 @onready var audio_stream_player_2d = $VBoxContainer/HBoxContainer/Buttons/AudioStreamPlayer2D
 
 func _ready():
-	pass
+	audio_stream_player_2d.volume_db += SoundControl.get_sfx_offset()
 
 func _on_play_pressed():
 	animation_player.play("fade")
@@ -17,7 +17,7 @@ func _on_exit_pressed():
 
 
 func _on_options_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file('res://scenes/options.tscn')
 
 
 func _on_play_mouse_entered():

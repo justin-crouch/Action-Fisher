@@ -25,6 +25,8 @@ var nearby = false
 
 func _ready():
 	Score.on_pause.connect(_on_pause)
+	
+	swing.volume_db += SoundControl.get_sfx_offset()
 
 func _physics_process(delta):
 	match(state):

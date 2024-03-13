@@ -1,0 +1,137 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4itccakaj6al"]
+
+[ext_resource type="FontFile" uid="uid://3wo0eceucdpw" path="res://assets/Mythoz.ttf" id="1_exqut"]
+[ext_resource type="Script" path="res://scenes/scripts/options.gd" id="1_s0xu4"]
+[ext_resource type="AudioStream" uid="uid://qbgc6u16fqit" path="res://assets/Audio/wrench-02-101112.mp3" id="3_oi6ah"]
+[ext_resource type="AudioStream" uid="uid://b57b613e6pgf8" path="res://assets/Audio/snap.wav" id="4_qwmsd"]
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s0xu4")
+
+[node name="GameOver" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox2" type="VBoxContainer" parent="GameOver"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="GameOver/VBox2"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.294118, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.870588)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("1_exqut")
+theme_override_font_sizes/font_size = 70
+text = "options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="GameOver/VBox2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="MusicBar" type="HBoxContainer" parent="GameOver/VBox2"]
+layout_mode = 2
+
+[node name="VSeparator" type="VSeparator" parent="GameOver/VBox2/MusicBar"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 200
+
+[node name="Label" type="Label" parent="GameOver/VBox2/MusicBar"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_exqut")
+theme_override_font_sizes/font_size = 48
+text = "music"
+
+[node name="MusicSlider" type="HSlider" parent="GameOver/VBox2/MusicBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = -40.0
+max_value = 20.0
+value = -20.0
+
+[node name="VSeparator2" type="VSeparator" parent="GameOver/VBox2/MusicBar"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 200
+
+[node name="MusicBar2" type="HBoxContainer" parent="GameOver/VBox2"]
+layout_mode = 2
+
+[node name="VSeparator3" type="VSeparator" parent="GameOver/VBox2/MusicBar2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 200
+
+[node name="Label" type="Label" parent="GameOver/VBox2/MusicBar2"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_exqut")
+theme_override_font_sizes/font_size = 48
+text = "sound effects"
+
+[node name="SFXSlider" type="HSlider" parent="GameOver/VBox2/MusicBar2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+min_value = -30.0
+max_value = 30.0
+
+[node name="VSeparator4" type="VSeparator" parent="GameOver/VBox2/MusicBar2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 200
+
+[node name="HSeparator" type="HSeparator" parent="GameOver/VBox2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Exit" type="Button" parent="GameOver/VBox2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 0.133333, 0.219608, 1)
+theme_override_colors/font_hover_color = Color(0.94902, 0.94902, 0.384314, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_exqut")
+theme_override_font_sizes/font_size = 48
+text = "back"
+flat = true
+
+[node name="SliderAdj" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_qwmsd")
+volume_db = -20.0
+
+[node name="BtnHover" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_oi6ah")
+volume_db = 3.0
+
+[connection signal="value_changed" from="GameOver/VBox2/MusicBar/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="GameOver/VBox2/MusicBar2/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="mouse_entered" from="GameOver/VBox2/Exit" to="." method="_on_exit_mouse_entered"]
+[connection signal="pressed" from="GameOver/VBox2/Exit" to="." method="_on_exit_pressed"]

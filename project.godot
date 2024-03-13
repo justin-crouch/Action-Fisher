@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Score="*res://scenes/scripts/score.gd"
 BackgroundMusic="*res://scenes/background_music.tscn"
+SoundControl="*res://scenes/scripts/sound_control.gd"
 
 [display]
 

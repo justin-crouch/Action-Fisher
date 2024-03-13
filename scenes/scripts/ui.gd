@@ -13,6 +13,8 @@ extends Control
 var Boat
 
 func _ready():
+	audio_stream_player_2d.volume_db += SoundControl.get_sfx_offset()
+	
 	Boat = get_node(BOAT_PATH)
 	Boat.health_changed.connect(_on_health_changed)
 	healthbar.value = Boat.get_health()

@@ -9,8 +9,8 @@
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ach4x")]
-z_index = 1
-position = Vector2(700, 550)
+z_as_relative = false
+position = Vector2(691, 550)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2(0, -100)
@@ -20,6 +20,7 @@ zoom = Vector2(1.3, 1.3)
 position = Vector2(494, 326)
 
 [node name="Rod1" parent="Rods" instance=ExtResource("2_jg3on")]
+z_as_relative = false
 position = Vector2(780, 234)
 BOAT_PATH = NodePath("../../Boat")
 MIN_COOLDOWN_TIME = 5.0
@@ -27,6 +28,7 @@ MAX_COOLDOWN_TIME = 25.0
 DISABLE_TIME = 12.0
 
 [node name="Rod2" parent="Rods" instance=ExtResource("2_jg3on")]
+z_as_relative = false
 position = Vector2(-168, 168)
 BOAT_PATH = NodePath("../../Boat")
 FLIP = 0
@@ -35,6 +37,7 @@ MAX_COOLDOWN_TIME = 25.0
 DISABLE_TIME = 12.0
 
 [node name="Rod3" parent="Rods" instance=ExtResource("2_jg3on")]
+z_as_relative = false
 position = Vector2(-309, 169)
 BOAT_PATH = NodePath("../../Boat")
 FLIP = 0
@@ -43,6 +46,7 @@ MAX_COOLDOWN_TIME = 25.0
 DISABLE_TIME = 12.0
 
 [node name="Rod4" parent="Rods" instance=ExtResource("2_jg3on")]
+z_as_relative = false
 position = Vector2(631, 231)
 BOAT_PATH = NodePath("../../Boat")
 MIN_COOLDOWN_TIME = 5.0
@@ -62,11 +66,12 @@ position = Vector2(200, 545)
 position = Vector2(674, 549)
 
 [node name="Tentacles" type="Node2D" parent="."]
-position = Vector2(730, 866)
+position = Vector2(730, 1831)
 
 [node name="Tentacle1" parent="Tentacles" instance=ExtResource("3_tapio")]
-z_index = 15
-position = Vector2(-278, 774)
+z_index = 5
+z_as_relative = false
+position = Vector2(-278, -253)
 TARGET_POS = NodePath("../../Targets/Target1")
 BOAT_PATH = NodePath("../../Boat")
 MIN_COOLDOWN_TIME = 3.0
@@ -75,7 +80,8 @@ ATK_COOLDOWN = 4.0
 MAX_ATK = 10
 
 [node name="Tentacle2" parent="Tentacles" instance=ExtResource("3_tapio")]
-position = Vector2(-44, 773)
+z_as_relative = false
+position = Vector2(-44, -238)
 TARGET_POS = NodePath("../../Targets/Target2")
 BOAT_PATH = NodePath("../../Boat")
 FLIP = 0
@@ -85,8 +91,9 @@ ATK_COOLDOWN = 4.0
 MAX_ATK = 10
 
 [node name="Tentacle3" parent="Tentacles" instance=ExtResource("3_tapio")]
-z_index = 18
-position = Vector2(430, 798)
+z_index = 5
+z_as_relative = false
+position = Vector2(430, -229)
 TARGET_POS = NodePath("../../Targets/Target3")
 BOAT_PATH = NodePath("../../Boat")
 MIN_COOLDOWN_TIME = 3.0

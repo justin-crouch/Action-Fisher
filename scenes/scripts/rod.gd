@@ -33,6 +33,10 @@ var nearby = false
 var plr
 
 func _ready():
+	catch.volume_db += SoundControl.get_sfx_offset()
+	fix.volume_db += SoundControl.get_sfx_offset()
+	_break.volume_db += SoundControl.get_sfx_offset()
+	
 	progress_bar.max_value = DISABLE_TIME
 	
 	skele_sprites.apply_scale( Vector2(FLIP-1, 1) )

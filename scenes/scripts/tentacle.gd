@@ -51,6 +51,12 @@ var state: STATES
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	attack.volume_db += SoundControl.get_sfx_offset()
+	hurt.volume_db += SoundControl.get_sfx_offset()
+	emerge_1.volume_db += SoundControl.get_sfx_offset()
+	emerge_2.volume_db += SoundControl.get_sfx_offset()
+	emerge_3.volume_db += SoundControl.get_sfx_offset()
+
 	rdm_noise = [emerge_1, emerge_2 ,emerge_3]
 	skele_parts.scale = Vector2(FLIP-1, 1)
 	reset_color()

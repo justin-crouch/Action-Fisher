@@ -17,3 +17,6 @@ res://scenes/scripts/score.gd
 res://scenes/background_music.tscn
 res://scenes/player.tscn
 res://scenes/scripts/player.gd
+res://scenes/options.tscn
+res://scenes/scripts/options.gd
+res://scenes/scripts/sound_control.gd

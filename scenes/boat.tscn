@@ -12,15 +12,20 @@ size = Vector2(33, 362)
 script = ExtResource("1_fo74y")
 
 [node name="Back" type="Sprite2D" parent="."]
+z_index = 1
+z_as_relative = false
 position = Vector2(259, -280)
 texture = ExtResource("2_73v7v")
 
 [node name="Post" type="Sprite2D" parent="."]
+z_index = 1
+z_as_relative = false
 position = Vector2(-448, -471)
 texture = ExtResource("3_cnnd4")
 
 [node name="Bottom" type="Sprite2D" parent="."]
-z_index = 10
+z_index = 4
+z_as_relative = false
 position = Vector2(-14, -76)
 texture = ExtResource("4_pcmjs")
 
@@ -38,6 +43,7 @@ shape = SubResource("RectangleShape2D_ghcj7")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 z_index = 30
+z_as_relative = false
 position = Vector2(0, -22)
 color = Color(0, 0.737255, 0.737255, 1)
 polygon = PackedVector2Array(-1757, -4, 1801, 2, 1793, 811, -1771, 795)
