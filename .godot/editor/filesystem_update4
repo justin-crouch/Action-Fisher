@@ -3,3 +3,14 @@ res://scenes/scripts/rod.gd
 res://scenes/scripts/tentacle.gd
 res://scenes/main.tscn
 res://scenes/rod.tscn
+res://scenes/menu.tscn
+res://scenes/scripts/menu.gd
+res://scenes/boat.tscn
+res://assets/label.tres
+res://scenes/scripts/label_btn.gd
+res://assets/buttonlabel.tres
+res://scenes/scripts/title_boat.gd
+res://scenes/ui.tscn
+res://scenes/scripts/ui.gd
+res://scenes/scripts/boat.gd
+res://scenes/scripts/score.gd

@@ -35,3 +35,9 @@ shape = SubResource("RectangleShape2D_ghcj7")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(981, 39)
 shape = SubResource("RectangleShape2D_ghcj7")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+z_index = 30
+position = Vector2(0, -22)
+color = Color(0, 0.737255, 0.737255, 1)
+polygon = PackedVector2Array(-1757, -4, 1801, 2, 1793, 811, -1771, 795)

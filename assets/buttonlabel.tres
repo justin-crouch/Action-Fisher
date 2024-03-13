@@ -1,0 +1,12 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://c5441ynv4i76d"]
+
+[ext_resource type="FontFile" uid="uid://3wo0eceucdpw" path="res://assets/Mythoz.ttf" id="1_ldw6g"]
+
+[resource]
+font = ExtResource("1_ldw6g")
+font_size = 28
+font_color = Color(0.94902, 0.94902, 0.384314, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 1)

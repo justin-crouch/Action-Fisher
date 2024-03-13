@@ -1,92 +1,397 @@
-[gd_scene load_steps=2 format=3 uid="uid://ci7kwoh1tw8va"]
+[gd_scene load_steps=14 format=3 uid="uid://ci7kwoh1tw8va"]
 
 [ext_resource type="Script" path="res://scenes/scripts/ui.gd" id="1_3gm7u"]
+[ext_resource type="FontFile" uid="uid://3wo0eceucdpw" path="res://assets/Mythoz.ttf" id="2_iobp8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1vl8"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ny0ep"]
+bg_color = Color(1, 0.227451, 0, 1)
+skew = Vector2(1, 0)
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+expand_margin_left = 50.0
+expand_margin_right = 25.0
+
+[sub_resource type="Animation" id="Animation_a7ogx"]
+resource_name = "hurt"
+length = 0.3
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_styles/normal:bg_color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.607843, 0, 0), Color(1, 0.607843, 0, 1), Color(1, 0.608, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ne7gq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_styles/normal:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.607843, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3uvbr"]
+_data = {
+"RESET": SubResource("Animation_ne7gq"),
+"hurt": SubResource("Animation_a7ogx")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ervle"]
+bg_color = Color(1, 0.607843, 0, 0)
+border_width_left = 4
+border_width_right = 4
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ke2ro"]
+bg_color = Color(0, 0, 0, 0.501961)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.294118, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_top = 40.0
+expand_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a4ukh"]
+content_margin_left = 40.0
+content_margin_top = 40.0
+content_margin_right = 40.0
+content_margin_bottom = 40.0
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_efbx3"]
+resource_name = "end_game"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_styles/panel:bg_color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBox2:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ar7rx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_styles/panel:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBox2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_omv5w"]
+_data = {
+"RESET": SubResource("Animation_ar7rx"),
+"end_game": SubResource("Animation_efbx3")
+}
 
 [node name="UI" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_3gm7u")
 
-[node name="HealthTime" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="HealthTime" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 90.0
+grow_horizontal = 2
 
-[node name="BoatHealth" type="Label" parent="HealthTime"]
-layout_mode = 0
-offset_left = 1.0
-offset_right = 58.0
-offset_bottom = 27.0
-text = "Health:"
-horizontal_alignment = 2
+[node name="Healthbar" type="ProgressBar" parent="HealthTime"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_g1vl8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ny0ep")
+value = 75.0
+show_percentage = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HealthTime/Healthbar"]
+root_node = NodePath("../Label")
+libraries = {
+"": SubResource("AnimationLibrary_3uvbr")
+}
+
+[node name="Label" type="Label" parent="HealthTime/Healthbar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.294118, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.678431)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_iobp8")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_ervle")
+text = "Health"
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Health" type="Label" parent="HealthTime/BoatHealth"]
-layout_mode = 0
-offset_left = 58.0
-offset_right = 91.0
-offset_bottom = 27.0
-text = "12"
-vertical_alignment = 1
+[node name="VSeparator" type="VSeparator" parent="HealthTime"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 5
 
 [node name="Time" type="Label" parent="HealthTime"]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 25.0
-offset_right = 58.0
-offset_bottom = 52.0
-text = "Time:"
-horizontal_alignment = 2
-vertical_alignment = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_iobp8")
+theme_override_font_sizes/font_size = 24
+text = "00:00"
 
-[node name="Time" type="Label" parent="HealthTime/Time"]
-layout_mode = 0
-offset_left = 58.0
-offset_right = 91.0
-offset_bottom = 27.0
-text = "12"
-vertical_alignment = 1
-
-[node name="Pause" type="Control" parent="."]
+[node name="Pause" type="PanelContainer" parent="."]
 visible = false
-layout_mode = 3
-anchors_preset = 0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -230.0
+offset_top = -216.0
+offset_right = 225.0
+offset_bottom = 191.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ke2ro")
 
-[node name="Resume" type="Button" parent="Pause"]
-layout_mode = 0
-offset_left = 216.0
-offset_top = 81.0
-offset_right = 286.0
-offset_bottom = 112.0
-text = "Resume"
+[node name="VBox" type="VBoxContainer" parent="Pause"]
+layout_mode = 2
+theme_override_constants/separation = 20
 
-[node name="Menu" type="Button" parent="Pause"]
-layout_mode = 0
-offset_left = 217.0
-offset_top = 120.0
-offset_right = 287.0
-offset_bottom = 151.0
-text = "Menu"
-
-[node name="Quit" type="Button" parent="Pause"]
-layout_mode = 0
-offset_left = 218.0
-offset_top = 159.0
-offset_right = 288.0
-offset_bottom = 190.0
-text = "Quit"
-
-[node name="Label" type="Label" parent="Pause"]
-layout_mode = 0
-offset_left = 205.0
-offset_top = 32.0
-offset_right = 294.0
-offset_bottom = 66.0
+[node name="Label" type="Label" parent="Pause/VBox"]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_colors/font_color = Color(0.294118, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.870588)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("2_iobp8")
+theme_override_font_sizes/font_size = 70
 text = "PAUSED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="Pause/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Pause/Menu" to="." method="_on_menu_pressed"]
-[connection signal="pressed" from="Pause/Quit" to="." method="_on_quit_pressed"]
+[node name="Resume" type="Button" parent="Pause/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.94902, 0.94902, 0.384314, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_iobp8")
+theme_override_font_sizes/font_size = 48
+text = "Resume"
+flat = true
+
+[node name="Menu" type="Button" parent="Pause/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.94902, 0.94902, 0.384314, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_iobp8")
+theme_override_font_sizes/font_size = 48
+text = "Menu"
+flat = true
+
+[node name="Exit" type="Button" parent="Pause/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.133333, 0.219608, 1)
+theme_override_colors/font_hover_color = Color(0.94902, 0.94902, 0.384314, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_iobp8")
+theme_override_font_sizes/font_size = 48
+text = "exit"
+flat = true
+
+[node name="GameOver" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a4ukh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GameOver"]
+libraries = {
+"": SubResource("AnimationLibrary_omv5w")
+}
+
+[node name="VBox2" type="VBoxContainer" parent="GameOver"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="HSeparator2" type="HSeparator" parent="GameOver/VBox2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Label" type="Label" parent="GameOver/VBox2"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.294118, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.870588)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("2_iobp8")
+theme_override_font_sizes/font_size = 70
+text = "game over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreDisplay" type="HBoxContainer" parent="GameOver/VBox2"]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="Score" type="Label" parent="GameOver/VBox2/ScoreDisplay"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.94902, 0.94902, 0.384314, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_iobp8")
+theme_override_font_sizes/font_size = 40
+text = "score:"
+
+[node name="Time" type="Label" parent="GameOver/VBox2/ScoreDisplay"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.94902, 0.94902, 0.384314, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_iobp8")
+theme_override_font_sizes/font_size = 40
+text = "00:00"
+
+[node name="Replay" type="Button" parent="GameOver/VBox2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.94902, 0.94902, 0.384314, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_iobp8")
+theme_override_font_sizes/font_size = 48
+text = "replay"
+flat = true
+
+[node name="Menu" type="Button" parent="GameOver/VBox2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.94902, 0.94902, 0.384314, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_iobp8")
+theme_override_font_sizes/font_size = 48
+text = "Menu"
+flat = true
+
+[node name="Exit" type="Button" parent="GameOver/VBox2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 0.133333, 0.219608, 1)
+theme_override_colors/font_hover_color = Color(0.94902, 0.94902, 0.384314, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_iobp8")
+theme_override_font_sizes/font_size = 48
+text = "exit"
+flat = true
+
+[node name="HSeparator" type="HSeparator" parent="GameOver/VBox2"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[connection signal="pressed" from="Pause/VBox/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Pause/VBox/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Pause/VBox/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="GameOver/VBox2/Replay" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="GameOver/VBox2/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="GameOver/VBox2/Exit" to="." method="_on_exit_pressed"]

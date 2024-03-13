@@ -34,8 +34,10 @@ enum STATES {
 	ATTACKING,
 	
 	HURT,
+	HURTING,
 	
 	RETREAT,
+	RETREATING,
 	INACTIVE,
 }
 var state: STATES
@@ -61,7 +63,7 @@ func _on_tick(delta, game_time):
 	
 	match(state):
 		STATES.WAIT:
-			#global_position = start_pos
+			global_position = start_pos
 			cooldown_timer = randf_range(MIN_COOLDOWN_TIME, MAX_COOLDOWN_TIME)
 			INTERACT.visible = false
 			state = STATES.WAITING
@@ -74,16 +76,14 @@ func _on_tick(delta, game_time):
 			hits = MAX_HITS
 			atk_timer = lerp( 1.5, ATK_COOLDOWN, Boat.rods / 4.0 )
 			
-			var tween = get_tree().create_tween()
-			tween.set_trans(Tween.TRANS_QUAD)
-			tween.set_ease(Tween.EASE_IN)
-			tween.tween_property($".", 'global_position', get_node(TARGET_POS).global_position, 1.0)
+			animation_player.play("appear")
+			animation_player.queue("idle")
 			
+			var tween = get_tree().create_tween()
+			tween.tween_property($".", 'global_position', get_node(TARGET_POS).global_position, .5)
 			await tween.finished
 			
 			reset_color()
-			animation_player.play("appear")
-			animation_player.queue("idle")
 			
 			state = STATES.ATTACKING 
 			
@@ -100,28 +100,37 @@ func _on_tick(delta, game_time):
 				atk_timer = lerp( 1.5, ATK_COOLDOWN, Boat.rods / 4.0 )
 			
 			if(nearby && Input.is_action_just_pressed("ATTACK")):
-				animation_player.play("hurt")
-				animation_player.queue("idle")
-				
 				atk_timer = lerp( 1.5, ATK_COOLDOWN, Boat.rods / 4.0 )
 				hits -= 1
 				hurt_timer = HIT_COOLDOWN
 				state = STATES.HURT
 			
 		STATES.HURT:
-			if(hurt_timer <= 0):
-				reset_color()
-				
-				if(hits <= 0): state = STATES.RETREAT
-				else: state = STATES.ATTACKING
-				
-			hurt_timer -= delta
+			animation_player.play("hurt")
+			animation_player.queue("idle")
+			state = STATES.HURTING
+			await get_tree().create_timer(HIT_COOLDOWN).timeout
+			reset_color()
+			
+			if(hits <= 0): state = STATES.RETREAT
+			else: state = STATES.ATTACKING
 			
 		STATES.RETREAT:
-			animation_player.stop()
+			STATES.RETREATING
+			INTERACT.visible = false
+			#animation_player.stop()
 			reset_color()
-			animation_player.play_backwards("appear")
 			
+			animation_player.speed_scale = .8
+			animation_player.play_backwards("appear")
+			await get_tree().create_timer(.5).timeout
+			
+			var tween = get_tree().create_tween()
+			tween.tween_property($".", 'global_position', start_pos, 2.0)
+			await tween.finished
+			
+			animation_player.stop()
+			animation_player.speed_scale = 1
 			#global_position = start_pos
 			state = STATES.WAIT
 			

@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var INTERACT = $Interact
+@onready var interact = $ProgressBar/Interact
 @onready var DISPLAY_TIMER = $DisplayTimer
 @onready var ANIMATOR = $AnimationPlayer
 @onready var skele_sprites = $SkeleSprites
@@ -30,7 +30,6 @@ var nearby = false
 var plr
 
 func _ready():
-	#ANIMATOR.flip_h = FLIP == 0
 	progress_bar.max_value = DISABLE_TIME
 	
 	skele_sprites.apply_scale( Vector2(FLIP-1, 1) )
@@ -50,7 +49,7 @@ func _on_tick(delta, game_time):
 		STATES.WAIT:
 			cooldown_timer = randf_range(MIN_COOLDOWN_TIME, MAX_COOLDOWN_TIME)
 			
-			INTERACT.visible = false
+			interact.visible = false
 			progress_bar.visible = false
 			
 			ANIMATOR.play("idle")
@@ -76,16 +75,17 @@ func _on_tick(delta, game_time):
 			disable_timer -= delta
 			
 			if(nearby):
-				INTERACT.visible = true
+				interact.visible = true
+				#progress_bar.visible = true
 				if(plr): plr.nearby = true
-			else: 		INTERACT.visible = false
+			else: 		interact.visible = false
 			
 			if(nearby && Input.is_action_just_pressed("INTERACT")): 
 				await get_tree().create_timer(.3).timeout
 				state = STATES.WAIT
 		
 		STATES.DISABLE:
-			INTERACT.visible = false
+			interact.visible = false
 			
 			progress_bar.visible = false
 			Boat.remove_rod()

@@ -2,6 +2,7 @@ extends Node
 
 signal health_changed(new_health)
 signal tick(delta, game_time)
+signal end_game()
 
 var MAX_HEALTH: float = 100
 var health: float = MAX_HEALTH
@@ -27,6 +28,7 @@ var state = PLAY
 func _ready():
 	ten_array = get_node(TENTACLES).get_children()
 	TEN_STATES = ten_array[0].STATES
+	Score.resume()
 	Score.on_pause.connect(_on_paused)
 
 func _process(delta):
@@ -65,4 +67,7 @@ func damage(amnt):
 	health_changed.emit(health)
 	if(health <= 0): game_over()
 	
-func game_over(): get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+func game_over():
+	Score.end_game()
+	end_game.emit()
+	#get_tree().change_scene_to_file("res://scenes/game_over.tscn")

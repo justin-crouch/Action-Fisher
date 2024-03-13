@@ -1,17 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1710185496
-export_presets.cfg::TextFile::-1::1709890887::0::1::::<><>::
+::res://::1710245472
+export_presets.cfg::TextFile::-1::1710189093::0::1::::<><>::
 icon.svg::CompressedTexture2D::2175510356258653566::1709820369::1709820375::1::::<><>::
 README.md::TextFile::-1::1710116909::0::1::::<><>::
-::res://assets/::1710107787
-boat_back.png::CompressedTexture2D::7640235752117296751::1709849912::1709849915::1::::<><>::
-boat_front.png::CompressedTexture2D::7486400933204234765::1709849922::1709849922::1::::<><>::
-rod.png::CompressedTexture2D::3218493470547709901::1709923808::1709923808::1::::<><>::
-rod_catch.png::CompressedTexture2D::6547704880918447403::1709926203::1709926203::1::::<><>::
-_pick up.png::CompressedTexture2D::8917901696557318097::1709855152::1709855152::1::::<><>::
-_side attack.png::CompressedTexture2D::4186493492780248221::1709855152::1709855152::1::::<><>::
-_side idle.png::CompressedTexture2D::386990803743797480::1709849955::1709849955::1::::<><>::
-_side walk.png::CompressedTexture2D::6414584555147104155::1709854155::1709854160::1::::<><>::
+::res://assets/::1710246755
+label.tres::LabelSettings::2848158649933162722::1710246500::0::1::::<><>::uid://dgn7ucfk4wp1r::::res://assets/ZANIAH.ttf
+Mythoz.ttf::FontFile::2011598828592135152::1710246755::1710246755::1::::<><>::
+ZANIAH.ttf::FontFile::7609210796621612609::1710245464::1710245472::1::::<><>::
 ::res://assets/Fisher/::1710024093
 bicep.png::CompressedTexture2D::3834656976126523195::1710024077::1710024093::1::::<><>::
 face.png::CompressedTexture2D::8230190920535045849::1710024077::1710024093::1::::<><>::
@@ -23,28 +18,28 @@ hook.png::CompressedTexture2D::3305641519341519484::1710024077::1710024093::1:::
 leg.png::CompressedTexture2D::5882690404155278294::1710024077::1710024093::1::::<><>::
 shoulder.png::CompressedTexture2D::4833162357764327445::1710024077::1710024093::1::::<><>::
 torso.png::CompressedTexture2D::583811925909469437::1710024077::1710024093::1::::<><>::
-::res://assets/FullAssets/::1710107788
+::res://assets/FullAssets/::1710245472
 back.svg::CompressedTexture2D::1152513108028561437::1710107774::1710107787::1::::<><>::
 bottom.svg::CompressedTexture2D::6521881234552805209::1710107774::1710107788::1::::<><>::
 fisherman.svg::CompressedTexture2D::664307734768987942::1710107774::1710107787::1::::<><>::
 post.svg::CompressedTexture2D::4440631890797694914::1710107774::1710107787::1::::<><>::
 rod.svg::CompressedTexture2D::8285882517588847935::1710107774::1710107787::1::::<><>::
 tentactle.svg::CompressedTexture2D::2798302547954000412::1710107774::1710107787::1::::<><>::
-::res://scenes/::1710185466
-boat.tscn::PackedScene::5175262940688062215::1710179495::0::1::::<><>::res://scenes/scripts/boat.gd<>uid://qojythlndxq0::::res://assets/FullAssets/back.svg<>uid://b4jcs8tugst7g::::res://assets/FullAssets/post.svg<>uid://cy6iowk7edyt2::::res://assets/FullAssets/bottom.svg
+::res://scenes/::1710246689
+boat.tscn::PackedScene::5175262940688062215::1710246689::0::1::::<><>::res://scenes/scripts/boat.gd<>uid://qojythlndxq0::::res://assets/FullAssets/back.svg<>uid://b4jcs8tugst7g::::res://assets/FullAssets/post.svg<>uid://cy6iowk7edyt2::::res://assets/FullAssets/bottom.svg
 game_over.tscn::PackedScene::5103786908258562301::1709850836::0::1::::<><>::res://scenes/scripts/game_over.gd
-main.tscn::PackedScene::1938841112111293872::1710185437::0::1::::<><>::uid://iymn8t07gpl6::::res://scenes/player.tscn<>uid://b7ll12xiwgikm::::res://scenes/rod.tscn<>uid://dcsevfmhhkf1g::::res://scenes/tentacle.tscn<>uid://ci7kwoh1tw8va::::res://scenes/ui.tscn<>uid://cfy63be300nlf::::res://scenes/boat.tscn
-menu.tscn::PackedScene::7273887149913524500::1710179811::0::1::::<><>::res://scenes/scripts/menu.gd
+main.tscn::PackedScene::1938841112111293872::1710246689::0::1::::<><>::uid://iymn8t07gpl6::::res://scenes/player.tscn<>uid://b7ll12xiwgikm::::res://scenes/rod.tscn<>uid://dcsevfmhhkf1g::::res://scenes/tentacle.tscn<>uid://ci7kwoh1tw8va::::res://scenes/ui.tscn<>uid://cfy63be300nlf::::res://scenes/boat.tscn
+menu.tscn::PackedScene::7273887149913524500::1710246689::0::1::::<><>::res://scenes/scripts/menu.gd<>uid://dgn7ucfk4wp1r::::res://assets/ZANIAH.ttf<>uid://qojythlndxq0::::res://assets/FullAssets/back.svg<>uid://b4jcs8tugst7g::::res://assets/FullAssets/post.svg<>uid://bgtw0y573jfre::::res://assets/label.tres<>uid://cy6iowk7edyt2::::res://assets/FullAssets/bottom.svg
 player.tscn::PackedScene::611809398236395489::1710179811::0::1::::<><>::res://scenes/scripts/player.gd<>uid://jp2b0lw5xvq1::::res://assets/FullAssets/fisherman.svg
-rod.tscn::PackedScene::4655887607020836944::1710179811::0::1::::<><>::res://scenes/scripts/rod.gd<>uid://dqb0jlkikxmyh::::res://assets/FullAssets/rod.svg
-tentacle.tscn::PackedScene::7337079189053718318::1710185466::0::1::::<><>::res://scenes/scripts/tentacle.gd<>uid://bf4rvtb0wf3f1::::res://assets/FullAssets/tentactle.svg
+rod.tscn::PackedScene::4655887607020836944::1710189074::0::1::::<><>::res://scenes/scripts/rod.gd<>uid://dqb0jlkikxmyh::::res://assets/FullAssets/rod.svg
+tentacle.tscn::PackedScene::7337079189053718318::1710188996::0::1::::<><>::res://scenes/scripts/tentacle.gd<>uid://bf4rvtb0wf3f1::::res://assets/FullAssets/tentactle.svg
 ui.tscn::PackedScene::5401059409362094254::1709908705::0::1::::<><>::res://scenes/scripts/ui.gd
-::res://scenes/scripts/::1710185378
+::res://scenes/scripts/::1710244887
 boat.gd::GDScript::-1::1710184785::0::1::::<>Node<>::
 game_over.gd::GDScript::-1::1709845060::0::1::::<>Node2D<>::
-menu.gd::GDScript::-1::1709843956::0::1::::<>Node2D<>::
+menu.gd::GDScript::-1::1710244887::0::1::::<>Control<>::
 player.gd::GDScript::-1::1710179142::0::1::::<>CharacterBody2D<>::
-rod.gd::GDScript::-1::1710179808::0::1::::<>Area2D<>::
+rod.gd::GDScript::-1::1710185524::0::1::::<>Area2D<>::
 score.gd::GDScript::-1::1709889924::0::1::::<>Node<>::
-tentacle.gd::GDScript::-1::1710185378::0::1::::<>Area2D<>::
+tentacle.gd::GDScript::-1::1710188858::0::1::::<>Area2D<>::
 ui.gd::GDScript::-1::1709908699::0::1::::<>Control<>::

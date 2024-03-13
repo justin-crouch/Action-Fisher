@@ -29,3 +29,7 @@ func display_score():
 func resume():
 	paused = false
 	on_pause.emit(paused)
+
+func end_game():
+	on_pause.emit(true)
+	paused = true

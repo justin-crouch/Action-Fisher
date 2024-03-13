@@ -1,40 +1,245 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbvr4gtvlla6o"]
+[gd_scene load_steps=13 format=3 uid="uid://dbvr4gtvlla6o"]
 
 [ext_resource type="Script" path="res://scenes/scripts/menu.gd" id="1_ykjgp"]
+[ext_resource type="PackedScene" uid="uid://b7ll12xiwgikm" path="res://scenes/rod.tscn" id="2_juttn"]
+[ext_resource type="Script" path="res://scenes/scripts/title_boat.gd" id="2_punem"]
+[ext_resource type="Texture2D" uid="uid://qojythlndxq0" path="res://assets/FullAssets/back.svg" id="3_elyqi"]
+[ext_resource type="Texture2D" uid="uid://b4jcs8tugst7g" path="res://assets/FullAssets/post.svg" id="4_s4lo7"]
+[ext_resource type="LabelSettings" uid="uid://bgtw0y573jfre" path="res://assets/label.tres" id="5_rdb0o"]
+[ext_resource type="Texture2D" uid="uid://cy6iowk7edyt2" path="res://assets/FullAssets/bottom.svg" id="5_svyyx"]
+[ext_resource type="FontFile" uid="uid://3wo0eceucdpw" path="res://assets/Mythoz.ttf" id="6_qgb85"]
 
-[node name="Menu" type="Node2D"]
+[sub_resource type="Animation" id="Animation_honsq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Boat:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Boat:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(937, 585)]
+}
+
+[sub_resource type="Animation" id="Animation_m4rs3"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qv3jl"]
+resource_name = "play"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Boat:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(1.05, 1.05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Boat:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(937, 585), Vector2(770, 570)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rcgoh"]
+_data = {
+"RESET": SubResource("Animation_honsq"),
+"fade": SubResource("Animation_m4rs3"),
+"play": SubResource("Animation_qv3jl")
+}
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_ykjgp")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Boat" type="Node2D" parent="."]
+position = Vector2(937, 585)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_punem")
 
-[node name="Play" type="Button" parent="CanvasLayer"]
-offset_left = 9.0
-offset_top = 9.0
-offset_right = 194.0
-offset_bottom = 80.0
-text = "PLAY"
+[node name="Back" type="Sprite2D" parent="Boat"]
+position = Vector2(262.865, -178.665)
+texture = ExtResource("3_elyqi")
 
-[node name="Setting" type="Button" parent="CanvasLayer"]
-offset_left = 9.0
-offset_top = 81.0
-offset_right = 194.0
-offset_bottom = 152.0
-text = "SETTINGS"
+[node name="Post" type="Sprite2D" parent="Boat"]
+position = Vector2(-444.135, -369.665)
+texture = ExtResource("4_s4lo7")
 
-[node name="Exit" type="Button" parent="CanvasLayer"]
-offset_left = 9.0
-offset_top = 153.0
-offset_right = 194.0
-offset_bottom = 224.0
-text = "EXIT"
+[node name="Rod" parent="Boat" instance=ExtResource("2_juttn")]
+position = Vector2(-685, -108.75)
+scale = Vector2(1.2, 1.2)
+script = null
 
-[node name="Title" type="Label" parent="CanvasLayer"]
-offset_left = 284.0
-offset_top = 18.0
-offset_right = 385.0
-offset_bottom = 41.0
-text = "Action Fisher"
+[node name="Rod2" parent="Boat" instance=ExtResource("2_juttn")]
+position = Vector2(-558, -108.75)
+scale = Vector2(1.2, 1.2)
+script = null
 
-[connection signal="pressed" from="CanvasLayer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="CanvasLayer/Setting" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]
+[node name="Rod3" parent="Boat" instance=ExtResource("2_juttn")]
+position = Vector2(550, -27.5001)
+scale = Vector2(1.2, 1.2)
+script = null
+
+[node name="Rod4" parent="Boat" instance=ExtResource("2_juttn")]
+position = Vector2(673.75, -23.7501)
+scale = Vector2(1.2, 1.2)
+script = null
+
+[node name="Bottom" type="Sprite2D" parent="Boat"]
+z_index = 12
+position = Vector2(-10.1351, 25.3348)
+texture = ExtResource("5_svyyx")
+
+[node name="Polygon2D" type="Polygon2D" parent="Boat"]
+z_index = 15
+position = Vector2(0, 80.7848)
+color = Color(0, 0.737255, 0.737255, 1)
+polygon = PackedVector2Array(-2501, -4, 1286, 2, 1286, 811, -2513, 795)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rcgoh")
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 164.0
+offset_top = 94.0
+offset_right = 792.0
+offset_bottom = 563.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 5.0
+text = "The Big Catch "
+label_settings = ExtResource("5_rdb0o")
+
+[node name="Spacer" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="SpacerF" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Buttons" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.0
+
+[node name="Play" type="Button" parent="VBoxContainer/HBoxContainer/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.94902, 0.94902, 0.384314, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_qgb85")
+theme_override_font_sizes/font_size = 48
+text = "Play"
+flat = true
+alignment = 0
+clip_text = true
+
+[node name="Options" type="Button" parent="VBoxContainer/HBoxContainer/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.94902, 0.94902, 0.384314, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_qgb85")
+theme_override_font_sizes/font_size = 48
+text = "options"
+flat = true
+alignment = 0
+clip_text = true
+
+[node name="Exit" type="Button" parent="VBoxContainer/HBoxContainer/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_colors/font_color = Color(1, 0.133333, 0.219608, 1)
+theme_override_colors/font_hover_color = Color(0.94902, 0.94902, 0.384314, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_qgb85")
+theme_override_font_sizes/font_size = 48
+text = "exit"
+flat = true
+alignment = 0
+clip_text = true
+
+[node name="SpacerB" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Buttons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Buttons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Buttons/Exit" to="." method="_on_exit_pressed"]

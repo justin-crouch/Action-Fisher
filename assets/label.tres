@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bgtw0y573jfre"]
+
+[ext_resource type="FontFile" uid="uid://3wo0eceucdpw" path="res://assets/Mythoz.ttf" id="1_5ulg6"]
+
+[resource]
+font = ExtResource("1_5ulg6")
+font_size = 50
+font_color = Color(0.294118, 1, 1, 1)
+shadow_color = Color(0, 0, 0, 0.576471)
+shadow_offset = Vector2(1, 5)
