@@ -51,6 +51,333 @@ modifications/1 = SubResource("SkeletonModification2DTwoBoneIK_3rtk1")
 modifications/2 = SubResource("SkeletonModification2DTwoBoneIK_d5vk6")
 modifications/3 = SubResource("SkeletonModification2DTwoBoneIK_ilnkt")
 
+[sub_resource type="Animation" id="Animation_vnli1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tentacle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(205, 956)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6, -6)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Tentacle/SkeleParts/Skeleton2D/0/1/2/3/4/5/6/7/8/9:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.258325]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Tentacle/SkeleParts/Skeleton2D/0/1/2/3/4/5/6/7/8/9/10:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0358649]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Tentacle/SkeleParts/Skeleton2D/0/1/2/3/4/5/6/7/8:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0213153]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Tentacle/SkeleParts/Skeleton2D/0/1/2/3/4/5/6/7:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0136514]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Tentacle/SkeleParts/Skeleton2D/0/1/2/3/4/5/6:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.00611767]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Tentacle/SkeleParts/Skeleton2D/0/1/2/3/4/5:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.00567752]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Tentacle/SkeleParts/Skeleton2D/0/1/2/3/4:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.019604]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Tentacle/SkeleParts/Skeleton2D/0/1/2/3:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0254296]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Tentacle/SkeleParts/Skeleton2D/0/1/2:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0358519]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Tentacle/SkeleParts/Skeleton2D/0/1:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.0213653]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Tentacle/SkeleParts/Skeleton2D/0:rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.57079]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Player:rotation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Tentacle/SkeleParts/Parts/Tip2:z_index")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Tentacle/SkeleParts/Parts/Tip1:z_index")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Player/PartsSkeleton/Skeleton2D/Base/Torso:rotation")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.0584284]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Player/PartsSkeleton/Skeleton2D/Base/Torso/IShoulder:rotation")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.054232]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Player/PartsSkeleton/Skeleton2D/Base/Torso/OShoulder:rotation")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.916917]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Player/PartsSkeleton/Skeleton2D/Base/OHip:rotation")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.157975]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Player/PartsSkeleton/Skeleton2D/Base/IHip:rotation")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.227586]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Player/PartsSkeleton/Skeleton2D/Base/IHip/Knee:rotation")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.49473]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Player/PartsSkeleton/Skeleton2D/Base/OHip/Knee:rotation")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.57813]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Player/PartsSkeleton/Parts/FLeg:z_index")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Player/PartsSkeleton/Parts/FFoot:z_index")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("Player/PartsSkeleton/Parts/BLeg:z_index")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("Player/PartsSkeleton/Parts/BFoot:z_index")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_syaa4"]
 resource_name = "squeeze"
 length = 7.50001
@@ -380,333 +707,6 @@ tracks/26/keys = {
 "values": [1]
 }
 
-[sub_resource type="Animation" id="Animation_vnli1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Tentacle:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(205, 956)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Player:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(6, -6)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Tentacle/SkeleParts/Skeleton2D/0/1/2/3/4/5/6/7/8/9:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.258325]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Tentacle/SkeleParts/Skeleton2D/0/1/2/3/4/5/6/7/8/9/10:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0358649]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Tentacle/SkeleParts/Skeleton2D/0/1/2/3/4/5/6/7/8:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0213153]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Tentacle/SkeleParts/Skeleton2D/0/1/2/3/4/5/6/7:rotation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0136514]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Tentacle/SkeleParts/Skeleton2D/0/1/2/3/4/5/6:rotation")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.00611767]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Tentacle/SkeleParts/Skeleton2D/0/1/2/3/4/5:rotation")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.00567752]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Tentacle/SkeleParts/Skeleton2D/0/1/2/3/4:rotation")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.019604]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Tentacle/SkeleParts/Skeleton2D/0/1/2/3:rotation")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0254296]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Tentacle/SkeleParts/Skeleton2D/0/1/2:rotation")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0358519]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Tentacle/SkeleParts/Skeleton2D/0/1:rotation")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.0213653]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("Tentacle/SkeleParts/Skeleton2D/0:rotation")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-1.57079]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("Player:rotation")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("Tentacle/SkeleParts/Parts/Tip2:z_index")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("Tentacle/SkeleParts/Parts/Tip1:z_index")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [4]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("Player/PartsSkeleton/Skeleton2D/Base/Torso:rotation")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.0584284]
-}
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("Player/PartsSkeleton/Skeleton2D/Base/Torso/IShoulder:rotation")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.054232]
-}
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("Player/PartsSkeleton/Skeleton2D/Base/Torso/OShoulder:rotation")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.916917]
-}
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("Player/PartsSkeleton/Skeleton2D/Base/OHip:rotation")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.157975]
-}
-tracks/20/type = "value"
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/path = NodePath("Player/PartsSkeleton/Skeleton2D/Base/IHip:rotation")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.227586]
-}
-tracks/21/type = "value"
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/path = NodePath("Player/PartsSkeleton/Skeleton2D/Base/IHip/Knee:rotation")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-0.49473]
-}
-tracks/22/type = "value"
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/path = NodePath("Player/PartsSkeleton/Skeleton2D/Base/OHip/Knee:rotation")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-1.57813]
-}
-tracks/23/type = "value"
-tracks/23/imported = false
-tracks/23/enabled = true
-tracks/23/path = NodePath("Player/PartsSkeleton/Parts/FLeg:z_index")
-tracks/23/interp = 1
-tracks/23/loop_wrap = true
-tracks/23/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/24/type = "value"
-tracks/24/imported = false
-tracks/24/enabled = true
-tracks/24/path = NodePath("Player/PartsSkeleton/Parts/FFoot:z_index")
-tracks/24/interp = 1
-tracks/24/loop_wrap = true
-tracks/24/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/25/type = "value"
-tracks/25/imported = false
-tracks/25/enabled = true
-tracks/25/path = NodePath("Player/PartsSkeleton/Parts/BLeg:z_index")
-tracks/25/interp = 1
-tracks/25/loop_wrap = true
-tracks/25/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/26/type = "value"
-tracks/26/imported = false
-tracks/26/enabled = true
-tracks/26/path = NodePath("Player/PartsSkeleton/Parts/BFoot:z_index")
-tracks/26/interp = 1
-tracks/26/loop_wrap = true
-tracks/26/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hxbfw"]
 _data = {
 "RESET": SubResource("Animation_vnli1"),
@@ -736,10 +736,10 @@ scale = Vector2(1, 1.4)
 
 [node name="Tip1" type="Sprite2D" parent="Tentacle/SkeleParts/Parts"]
 z_index = 4
-position = Vector2(22.1177, -538.8)
-rotation = -1.09846
-scale = Vector2(0.753492, 0.970778)
-skew = -0.217342
+position = Vector2(-12.4019, -295.313)
+rotation = 0.545018
+scale = Vector2(0.891558, 0.845746)
+skew = 0.326214
 texture = ExtResource("1_5vqcq")
 offset = Vector2(35.7143, -16.8)
 region_enabled = true
@@ -747,70 +747,70 @@ region_rect = Rect2(720, 0, 72, 56)
 
 [node name="Tip2" type="Sprite2D" parent="Tentacle/SkeleParts/Parts"]
 z_index = 4
-position = Vector2(9.34277, -500.995)
-rotation = -1.14402
-scale = Vector2(0.746276, 0.976336)
-skew = -0.198805
+position = Vector2(-15.7264, -334.132)
+rotation = 1.59336
+scale = Vector2(0.714365, 0.999922)
+skew = -0.0110499
 texture = ExtResource("1_5vqcq")
 offset = Vector2(27.1429, -21)
 region_enabled = true
 region_rect = Rect2(664, 0, 56, 56)
 
 [node name="Tip3" type="Sprite2D" parent="Tentacle/SkeleParts/Parts"]
-position = Vector2(8.16016, -449.943)
-rotation = -1.49286
-scale = Vector2(0.715341, 0.99923)
-skew = -0.0381142
+position = Vector2(27.1526, -374.985)
+rotation = 2.42061
+scale = Vector2(0.839667, 0.897292)
+skew = -0.323809
 texture = ExtResource("1_5vqcq")
 offset = Vector2(35.7143, -23.8)
 region_enabled = true
 region_rect = Rect2(592, 0, 72, 56)
 
 [node name="Tip4" type="Sprite2D" parent="Tentacle/SkeleParts/Parts"]
-position = Vector2(8.50098, -398.884)
-rotation = -1.52264
-scale = Vector2(0.714685, 0.999701)
-skew = -0.0235724
+position = Vector2(97.392, -365.503)
+rotation = -2.97884
+scale = Vector2(0.987621, 0.731287)
+skew = 0.148624
 texture = ExtResource("1_5vqcq")
 offset = Vector2(35.7143, -26.6)
 region_enabled = true
 region_rect = Rect2(512, 0, 72, 56)
 
 [node name="Mid2" type="Sprite2D" parent="Tentacle/SkeleParts/Parts"]
-position = Vector2(5.66919, -284.617)
-rotation = -1.5503
-scale = Vector2(0.714355, 0.999942)
-skew = -0.0100378
+position = Vector2(110.254, -260.091)
+rotation = -1.16138
+scale = Vector2(0.743726, 0.978293)
+skew = -0.191533
 texture = ExtResource("1_5vqcq")
 offset = Vector2(40, -26.6)
 region_enabled = true
 region_rect = Rect2(432, 0, 80, 56)
 
 [node name="Mid3" type="Sprite2D" parent="Tentacle/SkeleParts/Parts"]
-position = Vector2(4.04382, -227.487)
-rotation = -1.54235
-scale = Vector2(0.714423, 0.999893)
-skew = -0.0139279
+position = Vector2(53.2799, -219.977)
+rotation = -0.613457
+scale = Vector2(0.870987, 0.86693)
+skew = -0.330266
 texture = ExtResource("1_5vqcq")
 offset = Vector2(40, -26.6)
 region_enabled = true
 region_rect = Rect2(432, 0, 80, 56)
 
 [node name="Mid" type="Sprite2D" parent="Tentacle/SkeleParts/Parts"]
-position = Vector2(6.84045, -341.754)
-rotation = -1.54174
-scale = Vector2(0.714429, 0.999889)
-skew = -0.0142295
+position = Vector2(133.938, -314.672)
+rotation = -2.19414
+scale = Vector2(0.782569, 0.947508)
+skew = 0.271764
 texture = ExtResource("1_5vqcq")
 offset = Vector2(40, -26.6)
 region_enabled = true
 region_rect = Rect2(432, 0, 80, 56)
 
 [node name="Mid4" type="Sprite2D" parent="Tentacle/SkeleParts/Parts"]
-position = Vector2(0.822876, -170.39)
-rotation = -1.51493
-scale = Vector2(0.71483, 0.999608)
-skew = -0.0273396
+position = Vector2(16.6859, -169.106)
+rotation = -0.940817
+scale = Vector2(0.784026, 0.946309)
+skew = -0.273858
 texture = ExtResource("1_5vqcq")
 offset = Vector2(40, -26.6)
 region_enabled = true
@@ -818,16 +818,16 @@ region_rect = Rect2(432, 0, 80, 56)
 
 [node name="Mid5" type="Sprite2D" parent="Tentacle/SkeleParts/Parts"]
 position = Vector2(-0.279541, -114.273)
-rotation = -1.55051
-scale = Vector2(0.714356, 0.999947)
-skew = -0.00993633
+rotation = -1.26453
+scale = Vector2(0.730737, 0.988039)
+skew = -0.14631
 texture = ExtResource("1_5vqcq")
 offset = Vector2(40, -26.6)
 region_enabled = true
 region_rect = Rect2(432, 0, 80, 56)
 
 [node name="Mid6" type="Sprite2D" parent="Tentacle/SkeleParts/Parts"]
-position = Vector2(1.4292, -57.1428)
+position = Vector2(1.42908, -57.1427)
 rotation = -1.60069
 scale = Vector2(0.714442, 0.999888)
 skew = 0.0146407
@@ -838,6 +838,60 @@ region_rect = Rect2(432, 0, 80, 56)
 
 [node name="Mid7" type="Sprite2D" parent="Tentacle/SkeleParts/Parts"]
 position = Vector2(1.42859, 0)
+rotation = -1.57079
+scale = Vector2(0.714286, 1)
+texture = ExtResource("1_5vqcq")
+offset = Vector2(40, -26.6)
+region_enabled = true
+region_rect = Rect2(432, 0, 80, 56)
+
+[node name="Mid8" type="Sprite2D" parent="Tentacle/SkeleParts/Parts"]
+position = Vector2(1.74283, 56.143)
+rotation = -1.57079
+scale = Vector2(0.714286, 1)
+texture = ExtResource("1_5vqcq")
+offset = Vector2(40, -26.6)
+region_enabled = true
+region_rect = Rect2(432, 0, 80, 56)
+
+[node name="Mid9" type="Sprite2D" parent="Tentacle/SkeleParts/Parts"]
+position = Vector2(1.74283, 113.143)
+rotation = -1.57079
+scale = Vector2(0.714286, 1)
+texture = ExtResource("1_5vqcq")
+offset = Vector2(40, -26.6)
+region_enabled = true
+region_rect = Rect2(432, 0, 80, 56)
+
+[node name="Mid10" type="Sprite2D" parent="Tentacle/SkeleParts/Parts"]
+position = Vector2(1.74283, 170.143)
+rotation = -1.57079
+scale = Vector2(0.714286, 1)
+texture = ExtResource("1_5vqcq")
+offset = Vector2(40, -26.6)
+region_enabled = true
+region_rect = Rect2(432, 0, 80, 56)
+
+[node name="Mid11" type="Sprite2D" parent="Tentacle/SkeleParts/Parts"]
+position = Vector2(1.74283, 227.143)
+rotation = -1.57079
+scale = Vector2(0.714286, 1)
+texture = ExtResource("1_5vqcq")
+offset = Vector2(40, -26.6)
+region_enabled = true
+region_rect = Rect2(432, 0, 80, 56)
+
+[node name="Mid12" type="Sprite2D" parent="Tentacle/SkeleParts/Parts"]
+position = Vector2(1.74283, 284.143)
+rotation = -1.57079
+scale = Vector2(0.714286, 1)
+texture = ExtResource("1_5vqcq")
+offset = Vector2(40, -26.6)
+region_enabled = true
+region_rect = Rect2(432, 0, 80, 56)
+
+[node name="Mid13" type="Sprite2D" parent="Tentacle/SkeleParts/Parts"]
+position = Vector2(1.42859, 341)
 rotation = -1.57079
 scale = Vector2(0.714286, 1)
 texture = ExtResource("1_5vqcq")
@@ -882,7 +936,6 @@ metadata/_edit_lock_ = true
 [node name="3" type="Bone2D" parent="Tentacle/SkeleParts/Skeleton2D/0/1/2"]
 position = Vector2(80, 0)
 rotation = 0.0254296
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 80, 0)
 
 [node name="RemoteTransform2D4" type="RemoteTransform2D" parent="Tentacle/SkeleParts/Skeleton2D/0/1/2/3"]
@@ -916,7 +969,6 @@ metadata/_edit_lock_ = true
 [node name="6" type="Bone2D" parent="Tentacle/SkeleParts/Skeleton2D/0/1/2/3/4/5"]
 position = Vector2(80, 0)
 rotation = 0.00611767
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 80, 0)
 
 [node name="RemoteTransform2D2" type="RemoteTransform2D" parent="Tentacle/SkeleParts/Skeleton2D/0/1/2/3/4/5/6"]
@@ -960,7 +1012,6 @@ metadata/_edit_lock_ = true
 [node name="10" type="Bone2D" parent="Tentacle/SkeleParts/Skeleton2D/0/1/2/3/4/5/6/7/8/9"]
 position = Vector2(54.2857, -4.2)
 rotation = 0.0358649
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 54.2857, -4.2)
 
 [node name="RemoteTransform2D6" type="RemoteTransform2D" parent="Tentacle/SkeleParts/Skeleton2D/0/1/2/3/4/5/6/7/8/9/10"]
@@ -1008,9 +1059,9 @@ position = Vector2(-9, -81)
 
 [node name="BForearm" type="Sprite2D" parent="Player/PartsSkeleton/Parts"]
 z_index = 1
-position = Vector2(-11.235, -7.11563)
-rotation = 0.652288
-scale = Vector2(0.999375, 0.999375)
+position = Vector2(-42.751, -48.8243)
+rotation = 2.71301
+scale = Vector2(0.999373, 0.999373)
 texture = ExtResource("8_wgiqg")
 offset = Vector2(-4, 15)
 region_enabled = true
@@ -1018,9 +1069,9 @@ region_rect = Rect2(216, 168, 16, 40)
 
 [node name="BBicep" type="Sprite2D" parent="Player/PartsSkeleton/Parts"]
 z_index = 1
-position = Vector2(-13.1414, -39.1039)
-rotation = -0.0428679
-scale = Vector2(0.999505, 0.999505)
+position = Vector2(-13.6284, -35.4542)
+rotation = 2.01785
+scale = Vector2(0.999503, 0.999503)
 texture = ExtResource("8_wgiqg")
 offset = Vector2(-2, 13)
 region_enabled = true
@@ -1028,27 +1079,27 @@ region_rect = Rect2(192, 160, 24, 48)
 
 [node name="Hand" type="Sprite2D" parent="Player/PartsSkeleton/Parts"]
 z_index = 1
-position = Vector2(-30.3629, 14.7491)
-rotation = -2.27865
-scale = Vector2(0.999375, 0.999375)
+position = Vector2(-53.043, -75.9907)
+rotation = -0.217926
+scale = Vector2(0.999373, 0.999373)
 texture = ExtResource("8_wgiqg")
 offset = Vector2(-0.215731, -4.40458)
 region_enabled = true
 region_rect = Rect2(192, 208, 16, 24)
 
 [node name="BFoot" type="Sprite2D" parent="Player/PartsSkeleton/Parts"]
-position = Vector2(-20.8141, 49.2047)
-rotation = -0.400651
-scale = Vector2(0.999514, 0.999514)
+position = Vector2(-42.2753, 13.8447)
+rotation = 1.14636
+scale = Vector2(0.999518, 0.999518)
 texture = ExtResource("8_wgiqg")
 offset = Vector2(6, 14)
 region_enabled = true
 region_rect = Rect2(128, 304, 24, 48)
 
 [node name="BLeg" type="Sprite2D" parent="Player/PartsSkeleton/Parts"]
-position = Vector2(-5.21899, 15.5467)
-rotation = 0.188914
-scale = Vector2(0.99966, 0.99966)
+position = Vector2(-5.21887, 15.5468)
+rotation = 1.37172
+scale = Vector2(0.999663, 0.999663)
 texture = ExtResource("8_wgiqg")
 offset = Vector2(-3.87781, 16.2054)
 region_enabled = true
@@ -1056,9 +1107,9 @@ region_rect = Rect2(120, 248, 32, 56)
 
 [node name="Torso" type="Sprite2D" parent="Player/PartsSkeleton/Parts"]
 z_index = 1
-position = Vector2(9, 21)
-rotation = -0.0970999
-scale = Vector2(0.999662, 0.999662)
+position = Vector2(9.00012, 21.0001)
+rotation = -0.145948
+scale = Vector2(0.999661, 0.999661)
 texture = ExtResource("8_wgiqg")
 offset = Vector2(0, -36)
 region_enabled = true
@@ -1066,9 +1117,9 @@ region_rect = Rect2(104, 160, 56, 88)
 
 [node name="Face" type="Sprite2D" parent="Player/PartsSkeleton/Parts"]
 z_index = 1
-position = Vector2(4.9812, -40.881)
-rotation = -0.0865225
-scale = Vector2(0.999485, 0.999485)
+position = Vector2(1.9646, -40.6108)
+rotation = -0.13537
+scale = Vector2(0.999484, 0.999484)
 texture = ExtResource("8_wgiqg")
 offset = Vector2(0, -26)
 region_enabled = true
@@ -1076,27 +1127,27 @@ region_rect = Rect2(96, 88, 72, 64)
 
 [node name="Hat" type="Sprite2D" parent="Player/PartsSkeleton/Parts"]
 z_index = 1
-position = Vector2(-3.97058, -86.2534)
-rotation = -0.0848026
-scale = Vector2(0.999485, 0.999485)
+position = Vector2(-9.19189, -85.4919)
+rotation = -0.13365
+scale = Vector2(0.999484, 0.999484)
 texture = ExtResource("8_wgiqg")
 offset = Vector2(0, -18)
 region_enabled = true
 region_rect = Rect2(72, 24, 104, 56)
 
 [node name="FFoot" type="Sprite2D" parent="Player/PartsSkeleton/Parts"]
-position = Vector2(6.65112, 52.3962)
-rotation = -0.547087
-scale = Vector2(0.999498, 0.999498)
+position = Vector2(-14.6294, 32.996)
+rotation = 0.847356
+scale = Vector2(0.9995, 0.9995)
 texture = ExtResource("8_wgiqg")
 offset = Vector2(6, 13)
 region_enabled = true
 region_rect = Rect2(128, 304, 24, 48)
 
 [node name="FLeg" type="Sprite2D" parent="Player/PartsSkeleton/Parts"]
-position = Vector2(18.8748, 17.6162)
-rotation = 0.119304
-scale = Vector2(0.999658, 0.999658)
+position = Vector2(18.875, 17.6163)
+rotation = 0.921783
+scale = Vector2(0.999659, 0.999659)
 texture = ExtResource("8_wgiqg")
 offset = Vector2(-2, 17)
 region_enabled = true
@@ -1104,9 +1155,9 @@ region_rect = Rect2(120, 248, 32, 56)
 
 [node name="FForearm" type="Sprite2D" parent="Player/PartsSkeleton/Parts"]
 z_index = 1
-position = Vector2(50.8182, -27.015)
-rotation = -0.184218
-scale = Vector2(0.999375, 0.999375)
+position = Vector2(-10.1929, -30.5812)
+rotation = 2.20327
+scale = Vector2(0.999376, 0.999376)
 texture = ExtResource("8_wgiqg")
 offset = Vector2(-3.89942, 15.1278)
 region_enabled = true
@@ -1114,9 +1165,9 @@ region_rect = Rect2(216, 168, 16, 40)
 
 [node name="FBicep" type="Sprite2D" parent="Player/PartsSkeleton/Parts"]
 z_index = 1
-position = Vector2(22.4008, -39.9947)
-rotation = -1.01402
-scale = Vector2(0.999502, 0.999502)
+position = Vector2(19.4067, -40.576)
+rotation = 1.37347
+scale = Vector2(0.999504, 0.999504)
 texture = ExtResource("8_wgiqg")
 offset = Vector2(1, 15)
 region_enabled = true
@@ -1124,9 +1175,9 @@ region_rect = Rect2(192, 160, 24, 48)
 
 [node name="Hook" type="Sprite2D" parent="Player/PartsSkeleton/Parts"]
 z_index = 1
-position = Vector2(55.2396, 4.67371)
-rotation = -0.302998
-scale = Vector2(0.999362, 0.999362)
+position = Vector2(-35.1108, -50.6516)
+rotation = 2.08449
+scale = Vector2(0.999363, 0.999363)
 texture = ExtResource("8_wgiqg")
 offset = Vector2(-2, 8)
 region_enabled = true
@@ -1147,7 +1198,7 @@ editor_settings/show_bone_gizmo = false
 
 [node name="Torso" type="Bone2D" parent="Player/PartsSkeleton/Skeleton2D/Base"]
 rotation = -0.0584284
-scale = Vector2(0.999839, 0.999839)
+scale = Vector2(0.999838, 0.999838)
 rest = Transform2D(1, 0, 0, 1, 0, 0)
 editor_settings/show_bone_gizmo = false
 
@@ -1177,7 +1228,7 @@ remote_path = NodePath("../../../../../../Parts/Hat")
 [node name="OShoulder" type="Bone2D" parent="Player/PartsSkeleton/Skeleton2D/Base/Torso"]
 position = Vector2(19.2574, -59.4283)
 rotation = -0.916917
-scale = Vector2(0.99984, 0.99984)
+scale = Vector2(0.999843, 0.999843)
 rest = Transform2D(0.963933, -0.266146, 0.266146, 0.963933, 19, -60)
 editor_settings/show_bone_gizmo = false
 
@@ -1208,7 +1259,7 @@ remote_path = NodePath("../../../../../../../Parts/Hook")
 [node name="IShoulder" type="Bone2D" parent="Player/PartsSkeleton/Skeleton2D/Base/Torso"]
 position = Vector2(-16, -60)
 rotation = 0.054232
-scale = Vector2(0.999843, 0.999843)
+scale = Vector2(0.999842, 0.999842)
 rest = Transform2D(0.998706, 0.0508518, -0.0508518, 0.998706, -16, -60)
 editor_settings/show_bone_gizmo = false
 
@@ -1240,7 +1291,7 @@ remote_path = NodePath("../../../../../../../Parts/Hand")
 [node name="OHip" type="Bone2D" parent="Player/PartsSkeleton/Skeleton2D/Base"]
 position = Vector2(10, -3)
 rotation = 0.157975
-scale = Vector2(0.999835, 0.999835)
+scale = Vector2(0.999836, 0.999836)
 rest = Transform2D(1, 0, 0, 1, 10, -3)
 editor_settings/show_bone_gizmo = false
 
@@ -1250,7 +1301,7 @@ remote_path = NodePath("../../../../Parts/FLeg")
 [node name="Knee" type="Bone2D" parent="Player/PartsSkeleton/Skeleton2D/Base/OHip"]
 position = Vector2(-8, 36)
 rotation = -1.57813
-scale = Vector2(0.99984, 0.99984)
+scale = Vector2(0.999841, 0.999841)
 rest = Transform2D(0.999197, 0.0400599, -0.0400599, 0.999197, -8, 36)
 editor_settings/show_bone_gizmo = false
 
@@ -1261,7 +1312,7 @@ remote_path = NodePath("../../../../../Parts/FFoot")
 [node name="IHip" type="Bone2D" parent="Player/PartsSkeleton/Skeleton2D/Base"]
 position = Vector2(-14, -6)
 rotation = 0.227586
-scale = Vector2(0.999837, 0.999837)
+scale = Vector2(0.99984, 0.99984)
 rest = Transform2D(1, 0, 0, 1, -14, -6)
 editor_settings/show_bone_gizmo = false
 
@@ -1271,7 +1322,7 @@ remote_path = NodePath("../../../../Parts/BLeg")
 [node name="Knee" type="Bone2D" parent="Player/PartsSkeleton/Skeleton2D/Base/IHip"]
 position = Vector2(-9, 36)
 rotation = -0.49473
-scale = Vector2(0.999854, 0.999854)
+scale = Vector2(0.999855, 0.999855)
 rest = Transform2D(1, 0, 0, 1, -9, 36)
 editor_settings/show_bone_gizmo = false
 

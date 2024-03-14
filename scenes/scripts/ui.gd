@@ -53,11 +53,8 @@ func _on_paused(paused):
 	else: PAUSE.visible = false
 
 func _on_end_game():
-	
 	health_time.visible = false
 	PAUSE.visible = false
-	game_over.visible = true
-	get_node("GameOver/VBox2/ScoreDisplay/Time").text = Score.display_score()
 	
 	player.visible = false
 	tentacles.visible = false
@@ -68,6 +65,8 @@ func _on_end_game():
 	game_over_cutscene.get_node('AnimationPlayer').play('squeeze')
 	await game_over_cutscene.get_node('AnimationPlayer').animation_finished
 	
+	get_node("GameOver/VBox2/ScoreDisplay/Time").text = Score.display_score()
+	game_over.visible = true
 	over_animation.play("end_game")
 
 func _on_resume_pressed():

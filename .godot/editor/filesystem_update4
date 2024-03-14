@@ -1,11 +1,4 @@
-res://scenes/game_over_cutscene.tscn
-res://scenes/scripts/rod.gd
-res://assets/label.tres
-res://scenes/main.tscn
-res://scenes/menu.tscn
-res://scenes/scripts/boat.gd
-res://scenes/scripts/ui.gd
-res://scenes/scripts/player.gd
 res://scenes/ui.tscn
-res://scenes/rod.tscn
-res://scenes/boat.tscn
+res://scenes/scripts/rod.gd
+res://scenes/scripts/ui.gd
+res://scenes/main.tscn

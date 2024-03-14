@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnuwaffugf0wg"
-path="res://.godot/imported/sunrise parallax.png-c5c13778161d0a4f9a34854672aae011.ctex"
+uid="uid://bvr2dvjd1s6da"
+path="res://.godot/imported/icon.svg-4688d18cc61491b0fdee8feeec376f4b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/FullAssets/sunrise parallax.png"
-dest_files=["res://.godot/imported/sunrise parallax.png-c5c13778161d0a4f9a34854672aae011.ctex"]
+source_file="res://assets/FullAssets/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-4688d18cc61491b0fdee8feeec376f4b.ctex"]
 
 [params]
 
-compress/mode=1
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

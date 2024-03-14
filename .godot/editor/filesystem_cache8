@@ -1,11 +1,11 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1710370786
-export_presets.cfg::TextFile::-1::1710189093::0::1::::<><>::
+::res://::1710377056
+export_presets.cfg::TextFile::-1::1710376711::0::1::::<><>::
 icon.svg::CompressedTexture2D::2175510356258653566::1709820369::1709820375::1::::<><>::
 README.md::TextFile::-1::1710116909::0::1::::<><>::
-::res://assets/::1710369505
+::res://assets/::1710376299
 buttonlabel.tres::LabelSettings::6940182136462772881::1710334211::0::1::::<><>::uid://3wo0eceucdpw::::res://assets/Mythoz.ttf
-label.tres::LabelSettings::2848158649933162722::1710369505::0::1::::<><>::uid://3wo0eceucdpw::::res://assets/Mythoz.ttf
+label.tres::LabelSettings::2848158649933162722::1710376299::0::1::::<><>::uid://3wo0eceucdpw::::res://assets/Mythoz.ttf
 Mythoz.ttf::FontFile::2011598828592135152::1710246755::1710246755::1::::<><>::
 ZANIAH.ttf::FontFile::7609210796621612609::1710245464::1710245472::1::::<><>::
 ::res://assets/Audio/::1710342816
@@ -31,35 +31,36 @@ hook.png::CompressedTexture2D::3305641519341519484::1710024077::1710024093::1:::
 leg.png::CompressedTexture2D::5882690404155278294::1710024077::1710024093::1::::<><>::
 shoulder.png::CompressedTexture2D::4833162357764327445::1710024077::1710024093::1::::<><>::
 torso.png::CompressedTexture2D::583811925909469437::1710024077::1710024093::1::::<><>::
-::res://assets/FullAssets/::1710370927
+::res://assets/FullAssets/::1710374872
 back.svg::CompressedTexture2D::1152513108028561437::1710107774::1710107787::1::::<><>::
 bottom.svg::CompressedTexture2D::6521881234552805209::1710107774::1710107788::1::::<><>::
 day sky.png::CompressedTexture2D::1113878853573276020::1710370927::1710370930::1::::<><>::
 fish1.svg::CompressedTexture2D::7048894398353546103::1710357790::1710357790::1::::<><>::
 fisherman.svg::CompressedTexture2D::664307734768987942::1710107774::1710107787::1::::<><>::
+icon.svg::CompressedTexture2D::3897126655162593714::1710373195::1710373195::1::::<><>::
+logo.png::CompressedTexture2D::1165017023333611124::1710373332::1710373332::1::::<><>::
 post.svg::CompressedTexture2D::4440631890797694914::1710107774::1710107787::1::::<><>::
 rod.svg::CompressedTexture2D::8285882517588847935::1710107774::1710107787::1::::<><>::
 rod_icon.svg::CompressedTexture2D::8432786271320973834::1710367947::1710367954::1::::<><>::
-sunrise parallax.png::CompressedTexture2D::3341499251167305246::1710370778::1710370896::1::::<><>::
 tentactle.svg::CompressedTexture2D::2798302547954000412::1710107774::1710107787::1::::<><>::
-::res://scenes/::1710370786
+::res://scenes/::1710376350
 background_music.tscn::PackedScene::644169256922533015::1710355928::0::1::::<><>::uid://cu1ji7wlid04p::::res://assets/Audio/heilir-sir-norse-viking-background-music-114582.mp3
-boat.tscn::PackedScene::5175262940688062215::1710356381::0::1::::<><>::res://scenes/scripts/boat.gd<>uid://qojythlndxq0::::res://assets/FullAssets/back.svg<>uid://b4jcs8tugst7g::::res://assets/FullAssets/post.svg<>uid://cy6iowk7edyt2::::res://assets/FullAssets/bottom.svg
-game_over_cutscene.tscn::PackedScene::7111511938871395356::1710369327::0::1::::<><>::uid://bf4rvtb0wf3f1::::res://assets/FullAssets/tentactle.svg<>uid://be2sd6uftebau::::res://assets/Audio/tentacle-attack.mp3<>uid://bopclpyqijla1::::res://assets/Audio/tomato-squishwet-103934.mp3<>uid://di0otd024crc7::::res://assets/Audio/splash-01-35899.mp3<>uid://cu14c6cjvkcfk::::res://assets/Audio/sea-monster-scream-98276.mp3<>uid://ng3ijugaa3la::::res://assets/Audio/dinosaur-1-86566.mp3<>uid://jp2b0lw5xvq1::::res://assets/FullAssets/fisherman.svg<>uid://ddq8c0s7vuthu::::res://assets/Audio/rapid-wind-sound-effect-1-108398.mp3
-main.tscn::PackedScene::1938841112111293872::1710370136::0::1::::<><>::uid://iymn8t07gpl6::::res://scenes/player.tscn<>uid://b7ll12xiwgikm::::res://scenes/rod.tscn<>uid://dcsevfmhhkf1g::::res://scenes/tentacle.tscn<>uid://ci7kwoh1tw8va::::res://scenes/ui.tscn<>uid://cfy63be300nlf::::res://scenes/boat.tscn<>uid://c8k4tensqa0m7::::res://scenes/game_over_cutscene.tscn
-menu.tscn::PackedScene::7273887149913524500::1710370136::0::1::::<><>::res://scenes/scripts/menu.gd<>uid://b7ll12xiwgikm::::res://scenes/rod.tscn<>res://scenes/scripts/title_boat.gd<>uid://qojythlndxq0::::res://assets/FullAssets/back.svg<>uid://b4jcs8tugst7g::::res://assets/FullAssets/post.svg<>uid://bgtw0y573jfre::::res://assets/label.tres<>uid://cy6iowk7edyt2::::res://assets/FullAssets/bottom.svg<>uid://3wo0eceucdpw::::res://assets/Mythoz.ttf<>uid://qbgc6u16fqit::::res://assets/Audio/wrench-02-101112.mp3
+boat.tscn::PackedScene::5175262940688062215::1710371171::0::1::::<><>::res://scenes/scripts/boat.gd<>uid://qojythlndxq0::::res://assets/FullAssets/back.svg<>uid://b4jcs8tugst7g::::res://assets/FullAssets/post.svg<>uid://cy6iowk7edyt2::::res://assets/FullAssets/bottom.svg
+game_over_cutscene.tscn::PackedScene::7111511938871395356::1710376350::0::1::::<><>::uid://bf4rvtb0wf3f1::::res://assets/FullAssets/tentactle.svg<>uid://be2sd6uftebau::::res://assets/Audio/tentacle-attack.mp3<>uid://bopclpyqijla1::::res://assets/Audio/tomato-squishwet-103934.mp3<>uid://di0otd024crc7::::res://assets/Audio/splash-01-35899.mp3<>uid://cu14c6cjvkcfk::::res://assets/Audio/sea-monster-scream-98276.mp3<>uid://ng3ijugaa3la::::res://assets/Audio/dinosaur-1-86566.mp3<>uid://jp2b0lw5xvq1::::res://assets/FullAssets/fisherman.svg<>uid://ddq8c0s7vuthu::::res://assets/Audio/rapid-wind-sound-effect-1-108398.mp3
+main.tscn::PackedScene::1938841112111293872::1710376349::0::1::::<><>::uid://iymn8t07gpl6::::res://scenes/player.tscn<>uid://b7ll12xiwgikm::::res://scenes/rod.tscn<>uid://dcsevfmhhkf1g::::res://scenes/tentacle.tscn<>uid://ci7kwoh1tw8va::::res://scenes/ui.tscn<>uid://cfy63be300nlf::::res://scenes/boat.tscn<>uid://c8k4tensqa0m7::::res://scenes/game_over_cutscene.tscn<>uid://p4tol2phjndc::::res://assets/FullAssets/day sky.png
+menu.tscn::PackedScene::7273887149913524500::1710376350::0::1::::<><>::res://scenes/scripts/menu.gd<>uid://b7ll12xiwgikm::::res://scenes/rod.tscn<>res://scenes/scripts/title_boat.gd<>uid://qojythlndxq0::::res://assets/FullAssets/back.svg<>uid://b4jcs8tugst7g::::res://assets/FullAssets/post.svg<>uid://bgtw0y573jfre::::res://assets/label.tres<>uid://cy6iowk7edyt2::::res://assets/FullAssets/bottom.svg<>uid://3wo0eceucdpw::::res://assets/Mythoz.ttf<>uid://qbgc6u16fqit::::res://assets/Audio/wrench-02-101112.mp3<>uid://p4tol2phjndc::::res://assets/FullAssets/day sky.png
 options.tscn::PackedScene::9212410838566537231::1710356020::0::1::::<><>::uid://3wo0eceucdpw::::res://assets/Mythoz.ttf<>res://scenes/scripts/options.gd<>uid://qbgc6u16fqit::::res://assets/Audio/wrench-02-101112.mp3<>uid://b57b613e6pgf8::::res://assets/Audio/snap.wav
 player.tscn::PackedScene::611809398236395489::1710361188::0::1::::<><>::res://scenes/scripts/player.gd<>uid://ddq8c0s7vuthu::::res://assets/Audio/rapid-wind-sound-effect-1-108398.mp3<>uid://jp2b0lw5xvq1::::res://assets/FullAssets/fisherman.svg
 rod.tscn::PackedScene::4655887607020836944::1710370136::0::1::::<><>::res://scenes/scripts/rod.gd<>uid://3wo0eceucdpw::::res://assets/Mythoz.ttf<>uid://dqb0jlkikxmyh::::res://assets/FullAssets/rod.svg<>uid://b1egbepompvqm::::res://assets/Audio/reel.wav<>uid://b6wb6om6mfa2u::::res://assets/Audio/kick.mp3<>uid://b57b613e6pgf8::::res://assets/Audio/snap.wav<>uid://c7osi4t2m5wgd::::res://assets/FullAssets/fish1.svg
 tentacle.tscn::PackedScene::7337079189053718318::1710361205::0::1::::<><>::res://scenes/scripts/tentacle.gd<>uid://3wo0eceucdpw::::res://assets/Mythoz.ttf<>uid://bf4rvtb0wf3f1::::res://assets/FullAssets/tentactle.svg<>uid://be2sd6uftebau::::res://assets/Audio/tentacle-attack.mp3<>uid://bopclpyqijla1::::res://assets/Audio/tomato-squishwet-103934.mp3<>uid://di0otd024crc7::::res://assets/Audio/splash-01-35899.mp3<>uid://cu14c6cjvkcfk::::res://assets/Audio/sea-monster-scream-98276.mp3<>uid://ng3ijugaa3la::::res://assets/Audio/dinosaur-1-86566.mp3
 ui.tscn::PackedScene::5401059409362094254::1710369327::0::1::::<><>::res://scenes/scripts/ui.gd<>uid://qbgc6u16fqit::::res://assets/Audio/wrench-02-101112.mp3<>uid://3wo0eceucdpw::::res://assets/Mythoz.ttf<>uid://dse501cjdpcby::::res://assets/FullAssets/rod_icon.svg
-::res://scenes/scripts/::1710370135
+::res://scenes/scripts/::1710376299
 boat.gd::GDScript::-1::1710369381::0::1::::<>Node<>::
 game_over.gd::GDScript::-1::1709845060::0::1::::<>Node2D<>::
 menu.gd::GDScript::-1::1710356586::0::1::::<>Control<>::
 options.gd::GDScript::-1::1710355924::0::1::::<>Control<>::
 player.gd::GDScript::-1::1710366863::0::1::::<>CharacterBody2D<>::
-rod.gd::GDScript::-1::1710370135::0::1::::<>Area2D<>::
+rod.gd::GDScript::-1::1710376299::0::1::::<>Area2D<>::
 score.gd::GDScript::-1::1710360186::0::1::::<>Node<>::
 sound_control.gd::GDScript::-1::1710355784::0::1::::<>Node<>::
 tentacle.gd::GDScript::-1::1710355636::0::1::::<>Area2D<>::
